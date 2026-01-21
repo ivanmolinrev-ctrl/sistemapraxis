@@ -5,17 +5,16 @@
 <title>Sistema Praxis | Método claro para trabajar, gestionar y decidir</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --azul-oscuro: #0F2A44;
-    --azul-medio: #1F4E79;
-    --azul-claro: #9CC3E6;
-    --gris-fondo: #F4F6F8;
+    --azul-principal: #1F4E79;
+    --azul-secundario: #4A6FA5;
+    --gris-fondo: #F2F4F7;
+    --gris-claro: #FAFBFC;
+    --texto: #2E2E2E;
     --blanco: #FFFFFF;
-    --texto: #333333;
 }
 
 * {
@@ -32,15 +31,14 @@ body {
 
 /* HEADER */
 header {
-    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
-    color: var(--blanco);
-    padding: 90px 20px 80px;
+    background: linear-gradient(180deg, #FFFFFF, #EEF2F6);
     text-align: center;
+    padding: 90px 20px 80px;
 }
 
 .logo-img {
-    max-width: 260px;
-    margin-bottom: 30px;
+    max-width: 340px;
+    margin-bottom: 35px;
 }
 
 header h1 {
@@ -48,20 +46,21 @@ header h1 {
     font-weight: 700;
     max-width: 900px;
     margin: 0 auto 20px;
+    color: var(--azul-principal);
 }
 
 header p {
     font-size: 18px;
-    max-width: 750px;
+    max-width: 760px;
     margin: 0 auto 35px;
-    opacity: 0.95;
+    color: #555;
 }
 
 .btn-primary {
     display: inline-block;
-    padding: 16px 38px;
-    background: var(--blanco);
-    color: var(--azul-oscuro);
+    padding: 16px 40px;
+    background: var(--azul-principal);
+    color: var(--blanco);
     text-decoration: none;
     font-weight: 600;
     border-radius: 8px;
@@ -69,69 +68,75 @@ header p {
 }
 
 .btn-primary:hover {
-    background: #E6EEF6;
+    background: var(--azul-secundario);
 }
 
 /* SECTIONS */
 .section {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
     background: var(--blanco);
-    padding: 70px 30px;
-    margin-top: 50px;
-    border-radius: 12px;
+    padding: 75px 35px;
+    margin-top: 55px;
+    border-radius: 14px;
 }
 
 .section h2 {
     font-size: 30px;
-    color: var(--azul-oscuro);
-    margin-bottom: 15px;
+    color: var(--azul-principal);
+    margin-bottom: 18px;
 }
 
 .section p {
-    max-width: 800px;
+    max-width: 850px;
     font-size: 17px;
 }
 
-/* PRODUCT GRID */
+/* PRODUCTS */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    margin-top: 45px;
 }
 
 .product-card {
-    border-left: 6px solid var(--azul-medio);
-    padding: 30px;
-    background: #FAFBFC;
-    border-radius: 10px;
+    background: var(--gris-claro);
+    border-radius: 14px;
+    padding: 35px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 6px solid var(--azul-principal);
 }
 
 .product-card h3 {
     font-size: 22px;
-    color: var(--azul-oscuro);
+    color: var(--azul-principal);
+    margin-top: 0;
 }
 
 .product-card p {
     font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .price {
     font-weight: 700;
-    color: var(--azul-medio);
-    margin: 15px 0;
+    font-size: 18px;
+    color: var(--azul-secundario);
+    margin-bottom: 25px;
 }
 
 /* INSTITUTIONAL */
 .institutional {
-    background: linear-gradient(135deg, #EAF1F8, #FFFFFF);
-    border: 2px solid #E1EAF3;
+    background: linear-gradient(180deg, #F6F9FC, #FFFFFF);
+    border: 2px solid #E3EAF2;
 }
 
 /* FOOTER */
 footer {
-    margin-top: 70px;
+    margin-top: 80px;
     padding: 35px;
     text-align: center;
     font-size: 14px;
@@ -143,8 +148,11 @@ footer {
     header h1 {
         font-size: 26px;
     }
+    .logo-img {
+        max-width: 260px;
+    }
     .section {
-        padding: 50px 20px;
+        padding: 55px 25px;
     }
 }
 </style>
@@ -160,7 +168,7 @@ footer {
     <p>
         Sistema Praxis convierte conocimiento en sistemas prácticos
         para personas, profesionales y organizaciones que buscan claridad,
-        orden y resultados reales.
+        estructura y resultados reales.
     </p>
 
     <a href="ENLACE_HOTMART_CHECKLIST" class="btn-primary">
@@ -171,9 +179,9 @@ footer {
 <section class="section">
     <h2>¿Qué es Sistema Praxis?</h2>
     <p>
-        Sistema Praxis es un marco metodológico diseñado para ayudarte a
-        estructurar tu forma de trabajar, tomar mejores decisiones y
-        gestionar procesos con lógica, método y coherencia.
+        Sistema Praxis es un marco metodológico que te ayuda a organizar
+        tu forma de trabajar, tomar mejores decisiones y gestionar procesos
+        con lógica, método y coherencia.
     </p>
 </section>
 
@@ -191,7 +199,7 @@ footer {
 
         <div class="product-card">
             <h3>📗 Sistema Praxis Profesional</h3>
-            <p>Diseña procesos sólidos y repetibles para el ejercicio profesional.</p>
+            <p>Diseña procesos sólidos, claros y repetibles para el ejercicio profesional.</p>
             <div class="price">USD 39</div>
             <a href="ENLACE_HOTMART_EBOOK2" class="btn-primary">Comprar ebook</a>
         </div>
@@ -209,8 +217,8 @@ footer {
 <section class="section institutional">
     <h2>🏛️ Solución Institucional</h2>
     <p>
-        Sistema Praxis Institucional es un modelo de licenciamiento metodológico
-        para empresas, entidades públicas, ONG e instituciones educativas.
+        Modelo de licenciamiento metodológico para empresas,
+        entidades públicas, ONG e instituciones educativas.
     </p>
 
     <a href="mailto:contacto@sistemapraxis.com" class="btn-primary">
@@ -224,4 +232,3 @@ footer {
 
 </body>
 </html>
-
