@@ -5,103 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Praxis | Claridad diaria para avanzar</title>
 
-    <!-- SEO básico -->
-    <meta name="description" content="Sistema Praxis: un método práctico para avanzar con claridad sin agotarte.">
-    <meta name="author" content="Sistema Praxis">
+    <!-- SEO -->
+    <meta name="description" content="Sistema Praxis: claridad diaria para avanzar sin agotarte. Un sistema práctico de toma de decisiones.">
 
-    <!-- Estilos base (luego los separamos en CSS) -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #2563eb;
+            --dark: #0f172a;
+            --gray: #475569;
+            --light: #f8fafc;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #1f2933;
-            background-color: #f9fafb;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.7;
         }
 
+        /* HEADER */
         header {
-            background: #0f172a;
-            color: #ffffff;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
             padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header nav {
+        nav {
+            max-width: 1200px;
+            margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        header nav a {
-            color: #ffffff;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .logo img {
+            height: 42px;
+        }
+
+        nav a {
+            margin-left: 24px;
             text-decoration: none;
-            margin-left: 20px;
+            color: var(--gray);
             font-weight: 500;
         }
 
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* SECTIONS */
         section {
-            padding: 80px 40px;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: auto;
+            padding: 100px 40px;
         }
 
-        h1, h2, h3 {
-            margin-top: 0;
+        .alt {
+            background-color: #eef2ff;
         }
 
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--gray);
+            max-width: 720px;
+        }
+
+        /* HERO */
         .hero {
             text-align: center;
+            padding-top: 120px;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-        }
-
-        .hero h2 {
-            font-weight: 400;
-            color: #475569;
+        .hero p {
+            margin: 20px auto 40px;
+            font-size: 1.1rem;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 14px 28px;
-            background: #2563eb;
+            padding: 14px 32px;
+            background: var(--secondary);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 600;
         }
 
-        .alt-bg {
-            background-color: #e5e7eb;
+        .btn:hover {
+            background: var(--primary);
         }
 
+        /* GRID */
         .grid-4 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 40px;
         }
 
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        /* SYSTEM IMAGE */
+        .system-image {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .system-image img {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* QUOTE */
+        .quote {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* FOOTER */
         footer {
-            background: #0f172a;
+            background: var(--dark);
             color: #ffffff;
             text-align: center;
-            padding: 40px;
+            padding: 50px 20px;
+        }
+
+        footer p {
+            color: #c7d2fe;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<!-- HEADER / NAV -->
+<!-- HEADER -->
 <header>
     <nav>
-        <div><strong>Sistema Praxis</strong></div>
+        <div class="logo">
+            <img src="logo-praxis.png" alt="Sistema Praxis">
+            Sistema Praxis
+        </div>
         <div>
             <a href="#inicio">Inicio</a>
             <a href="#sistema">El Sistema</a>
             <a href="#ebooks">Ebooks</a>
-            <a href="#acceder">Acceder</a>
         </div>
     </nav>
 </header>
@@ -118,15 +218,15 @@
 </section>
 
 <!-- PROBLEMA -->
-<section class="alt-bg">
+<section class="alt">
     <h2>Trabajas mucho. Avanzas poco.</h2>
     <p>
-        No es falta de disciplina ni de capacidad.  
+        No es falta de disciplina ni de capacidad.
         Es la ausencia de un sistema claro para decidir qué merece tu energía cada día.
     </p>
 </section>
 
-<!-- SISTEMA VISUAL -->
+<!-- SISTEMA -->
 <section id="sistema">
     <h2>Cómo funciona el Sistema Praxis</h2>
     <p>
@@ -134,69 +234,60 @@
         en un flujo adaptable a cualquier día.
     </p>
 
-    <!-- Aquí luego irá la imagen del sistema -->
-    <p><em>[Imagen del Sistema Praxis]</em></p>
+    <div class="system-image">
+        <!-- Aquí va la imagen del sistema -->
+        <img src="sistema-praxis.png" alt="Cuadro visual del Sistema Praxis">
+    </div>
 </section>
 
-<!-- LOS 4 PILARES -->
-<section class="alt-bg">
+<!-- PILARES -->
+<section class="alt">
     <div class="grid-4">
-        <div>
+        <div class="card">
             <h3>Claridad</h3>
             <p>Define el resultado antes de empezar. No organizas tareas, estableces dirección.</p>
         </div>
-        <div>
+        <div class="card">
             <h3>Prioridad</h3>
             <p>Identifica la acción que realmente importa. El resto se ordena o se descarta.</p>
         </div>
-        <div>
+        <div class="card">
             <h3>Acción</h3>
             <p>Ejecuta con intención. Menos fragmentación, más impacto.</p>
         </div>
-        <div>
+        <div class="card">
             <h3>Revisión</h3>
             <p>Ajusta sin castigarte. Aprende del día y mejora el siguiente.</p>
         </div>
     </div>
 </section>
 
-<!-- ADAPTABILIDAD -->
-<section>
-    <h2>Un sistema que se adapta</h2>
-    <p><strong>Día normal:</strong> Claridad → Prioridad → Acción → Revisión</p>
-    <p><strong>Día saturado:</strong> Resultado mínimo → Acción viable → Cierre consciente</p>
-    <p><strong>Día de baja energía:</strong> Reducir → Mantener continuidad → No abandonar</p>
-</section>
-
 <!-- EBOOKS -->
-<section id="ebooks" class="alt-bg">
+<section id="ebooks">
     <h2>Los Ebooks del Sistema Praxis</h2>
     <p>
         Cada ebook desarrolla una etapa del sistema.  
         Puedes empezar por el primero y avanzar a tu ritmo.
     </p>
 
-    <p>
-        <strong>Ebook 1:</strong> Fundamentos del Sistema Praxis  
-        <br>
-        <a href="ebook1.html" class="btn">Ver Ebook 1</a>
+    <a href="ebook1.html" class="btn">Ver Ebook 1</a>
+</section>
+
+<!-- FRASE -->
+<section>
+    <p class="quote">
+        No necesitas más disciplina.<br>
+        Necesitas un sistema que piense contigo.
     </p>
 </section>
 
-<!-- FRASE FINAL -->
-<section>
-    <h2 style="text-align:center;">
-        No necesitas más disciplina.<br>
-        Necesitas un sistema que piense contigo.
-    </h2>
-</section>
-
 <!-- FOOTER -->
-<footer id="acceder">
+<footer>
     <p>Sistema Praxis © 2026</p>
 </footer>
 
 </body>
 </html>
+
 
 
