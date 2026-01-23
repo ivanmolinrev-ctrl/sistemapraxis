@@ -9,11 +9,12 @@
 
 <style>
 :root{
-  --bg:#f8fafc;
+  --brand:#1e40af;
   --ink:#0f172a;
   --muted:#475569;
   --line:#e5e7eb;
-  --brand:#1e40af;
+  --bg:#f8fafc;
+  --soft:#eef2ff;
 }
 
 *{box-sizing:border-box}
@@ -28,14 +29,14 @@ body{
 
 /* HEADER */
 header{
-  border-bottom:1px solid var(--line);
   background:#fff;
+  border-bottom:1px solid var(--line);
 }
 
 nav{
   max-width:1100px;
   margin:auto;
-  padding:20px 32px;
+  padding:22px 32px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -44,18 +45,19 @@ nav{
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
-  font-weight:500;
+  gap:16px;
+  font-weight:600;
+  font-size:1.1rem;
 }
 
 .brand img{
-  height:36px;
+  height:56px;
 }
 
 nav a{
   text-decoration:none;
   color:var(--muted);
-  margin-left:24px;
+  margin-left:28px;
   font-size:0.95rem;
 }
 
@@ -63,65 +65,80 @@ nav a:hover{color:var(--brand)}
 
 /* SECTIONS */
 section{
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
   padding:90px 32px;
 }
 
-.hero{
-  padding-top:120px;
+.alt{
+  background:var(--soft);
 }
 
+/* HERO */
 .hero h1{
-  font-size:3rem;
-  font-weight:500;
-  margin-bottom:12px;
+  font-size:3.2rem;
+  font-weight:600;
+  margin-bottom:16px;
 }
 
 .hero p{
-  font-size:1.1rem;
+  font-size:1.15rem;
+  max-width:700px;
   color:var(--muted);
-  max-width:640px;
 }
 
-/* TYPOGRAPHY */
+/* TITLES */
 h2{
-  font-size:1.9rem;
-  font-weight:500;
-  margin-bottom:16px;
+  font-size:2.1rem;
+  font-weight:600;
+  margin-bottom:18px;
 }
 
 .small{
   color:var(--muted);
-  font-size:0.95rem;
+  max-width:720px;
 }
 
-/* SYSTEM LIST */
-.system{
-  border-left:3px solid var(--brand);
-  padding-left:24px;
+/* SYSTEM SCHEMA */
+.schema{
+  margin-top:40px;
+  border-left:4px solid var(--brand);
+  padding-left:28px;
+}
+
+.schema p{
+  margin:14px 0;
+  font-size:1rem;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:32px;
   margin-top:40px;
 }
 
-.system p{
-  margin:14px 0;
+.box{
+  background:#fff;
+  padding:28px;
+  border:1px solid var(--line);
 }
 
 /* CTA */
 .cta{
-  border-top:1px solid var(--line);
-  margin-top:80px;
+  border-top:2px solid var(--line);
   padding-top:60px;
 }
 
 .btn{
   display:inline-block;
   margin-top:24px;
-  padding:12px 28px;
-  border:1px solid var(--brand);
+  padding:14px 30px;
+  border:2px solid var(--brand);
   color:var(--brand);
   text-decoration:none;
-  font-weight:500;
+  font-weight:600;
 }
 
 .btn:hover{
@@ -146,7 +163,7 @@ footer{
 <nav>
   <div class="brand">
     <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
-    <span>Sistema Praxis</span>
+    Sistema Praxis
   </div>
   <div>
     <a href="#sistema">Sistema</a>
@@ -158,34 +175,53 @@ footer{
 <section class="hero">
 <h1>El Sistema Praxis</h1>
 <p>
-Un sistema práctico para personas que trabajan intensamente
+Un sistema práctico para personas que trabajan intensamente,
 pero sienten que su avance no refleja su esfuerzo.
 </p>
 </section>
 
-<section>
-<h2>No es falta de disciplina</h2>
+<section class="alt">
+<h2>El problema que Praxis resuelve</h2>
 <p class="small">
-La mayoría de las personas no fallan por pereza ni desorden,
+La mayoría de las personas no fallan por falta de disciplina,
 sino por tomar decisiones sin una estructura clara.
 </p>
+</section>
 
-<div class="system">
-<p><strong>Claridad.</strong> Definir qué resultado merece tu energía.</p>
-<p><strong>Prioridad.</strong> Elegir una sola acción que mueva el día.</p>
-<p><strong>Acción.</strong> Ejecutar sin fragmentación.</p>
-<p><strong>Revisión.</strong> Aprender y ajustar.</p>
+<section id="sistema">
+<h2>Qué es el Sistema Praxis</h2>
+<p class="small">
+Praxis es una estructura de pensamiento y acción
+que te permite decidir mejor cada día sin agotarte.
+</p>
+
+<div class="schema">
+<p><strong>Claridad</strong> · Definir qué resultado merece tu energía.</p>
+<p><strong>Prioridad</strong> · Elegir una sola acción que mueva el día.</p>
+<p><strong>Acción</strong> · Ejecutar sin fragmentación.</p>
+<p><strong>Revisión</strong> · Aprender y ajustar.</p>
+</div>
+</section>
+
+<section class="alt">
+<h2>Para quién es Praxis</h2>
+
+<div class="grid">
+  <div class="box">Personas que trabajan mucho pero avanzan poco.</div>
+  <div class="box">Profesionales con exceso de responsabilidades.</div>
+  <div class="box">Emprendedores y gestores de proyectos.</div>
+  <div class="box">Cualquier persona que necesita claridad diaria.</div>
 </div>
 </section>
 
 <section class="cta" id="ebooks">
-<h2>Ebook 1 · Fundamentos del Sistema Praxis</h2>
+<h2>Accede a los Ebooks del Sistema</h2>
 <p class="small">
-El punto de entrada al sistema.
-Diseñado para generar claridad desde el primer día.
+Cada ebook desarrolla una parte del sistema.
+Puedes empezar por el primero y avanzar a tu ritmo.
 </p>
 
-<a href="ebook1.html" class="btn">Ver Ebook</a>
+<a href="ebook1.html" class="btn">Ver Ebook 1</a>
 </section>
 
 <footer>
@@ -194,6 +230,7 @@ Sistema Praxis © 2026
 
 </body>
 </html>
+
 
 
 
