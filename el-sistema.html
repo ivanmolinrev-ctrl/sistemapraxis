@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>El Sistema | Sistema Praxis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul-principal: #0d3b66;
+            --azul-secundario: #1f6fae;
+            --azul-claro: #eaf3fb;
+            --gris-texto: #2e2e2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gris-texto);
+            background-color: #ffffff;
+            line-height: 1.65;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
+            color: white;
+            padding: 28px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo img {
+            height: 64px;
+        }
+
+        .logo span {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 90px 0 70px;
+            background-color: var(--azul-claro);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--azul-principal);
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 760px;
+            margin: auto;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            font-size: 32px;
+            color: var(--azul-principal);
+            margin-bottom: 18px;
+        }
+
+        section p {
+            font-size: 17px;
+            max-width: 820px;
+        }
+
+        /* BLOQUE VISUAL */
+        .visual-wrapper {
+            margin-top: 48px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .visual-wrapper img {
+            max-width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+        }
+
+        /* PILARES */
+        .pillars {
+            background-color: #f8fafc;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .pillar-card {
+            background: white;
+            padding: 32px;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .pillar-card h3 {
+            color: var(--azul-secundario);
+            margin-bottom: 12px;
+        }
+
+        /* FRASE FINAL */
+        .final-quote {
+            background: linear-gradient(135deg, var(--azul-secundario), var(--azul-principal));
+            color: white;
+            text-align: center;
+            padding: 70px 24px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0a2540;
+            color: #cfd8e3;
+            text-align: center;
+            padding: 26px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">
+            <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
+            <span>SISTEMA PRAXIS</span>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="el-sistema.html">El Sistema</a>
+            <a href="#">Beneficios</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>El Sistema Praxis</h1>
+        <p>
+            Praxis es un sistema de pensamiento práctico diseñado para reducir fricción mental,
+            mejorar la calidad de las decisiones y generar avance sostenido en contextos reales.
+        </p>
+    </div>
+</section>
+
+<!-- POR QUÉ EXISTE -->
+<section>
+    <div class="container">
+        <h2>Por qué existe Praxis</h2>
+        <p>
+            La mayoría de las personas no fallan por falta de capacidad ni disciplina.
+            Fallan porque toman decisiones constantemente sin una estructura que las sostenga.
+        </p>
+        <p>
+            Praxis existe para reducir esa carga mental y transformarla en claridad operativa.
+        </p>
+    </div>
+</section>
+
+<!-- MODELO VISUAL -->
+<section>
+    <div class="container">
+        <h2>El modelo del sistema</h2>
+        <p>
+            El Sistema Praxis funciona como un ciclo mínimo y repetible
+            que se adapta incluso a días caóticos o de baja energía.
+        </p>
+
+        <div class="visual-wrapper">
+            <img src="cuadro-visual-sistema-praxis.png" alt="Modelo del Sistema Praxis">
+        </div>
+    </div>
+</section>
+
+<!-- PILARES -->
+<section class="pillars">
+    <div class="container">
+        <h2>Los 4 pilares del Sistema Praxis</h2>
+
+        <div class="pillar-grid">
+            <div class="pillar-card">
+                <h3>Claridad</h3>
+                <p>Define qué merece tu energía hoy. Sin claridad, todo esfuerzo se dispersa.</p>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Prioridad</h3>
+                <p>Reduce el ruido a una sola acción relevante. Menos decisiones, más impacto.</p>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Acción</h3>
+                <p>Ejecuta sin fragmentarte. Una intención clara, un bloque consciente.</p>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Revisión</h3>
+                <p>Convierte la experiencia en aprendizaje. El sistema mejora contigo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONEXIÓN -->
+<section>
+    <div class="container">
+        <h2>Cómo se conecta todo</h2>
+        <p>
+            Claridad genera foco.  
+            El foco permite priorizar.  
+            Priorizar habilita la acción.  
+            La acción produce información.  
+            La información mejora la claridad.
+        </p>
+    </div>
+</section>
+
+<!-- FRASE FINAL -->
+<section class="final-quote">
+    “No necesitas más disciplina. Necesitas un sistema que piense contigo.”
+</section>
+
+<footer>
+    © 2026 Sistema Praxis · Claridad que genera avance
+</footer>
+
+</body>
+</html>
