@@ -199,6 +199,110 @@
             font-size: 14px;
         }
 
+/* TOOLS / EBOOKS */
+.tools {
+    background: #f8fafc;
+    padding: 90px 0;
+}
+
+.tools h2 {
+    text-align: center;
+    font-size: 34px;
+    color: var(--azul-principal);
+    margin-bottom: 16px;
+}
+
+.tools-intro {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    color: #475569;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px;
+}
+
+.tool-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 65px rgba(0,0,0,0.12);
+}
+
+.tool-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.tool-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    background: var(--azul-secundario);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.tool-tag.muted {
+    background: #cbd5e1;
+    color: #334155;
+}
+
+.tool-card h3 {
+    font-size: 22px;
+    color: var(--azul-principal);
+    margin-bottom: 12px;
+}
+
+.tool-desc {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.tool-points {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+.tool-points li {
+    margin-bottom: 8px;
+}
+
+.tool-points.muted {
+    color: #64748b;
+}
+
+.tool-cta {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--azul-secundario);
+    text-decoration: none;
+}
+
+.tool-cta:hover {
+    text-decoration: underline;
+}
+
+/* Destacado Ebook 1 */
+.tool-card.featured {
+    border: 2px solid var(--azul-secundario);
+}
+        
         /* RESPONSIVE */
         @media (max-width: 900px) {
             nav {
@@ -298,49 +402,71 @@
     </div>
 </section>
 
-<section class="wrapper">
-  <div class="container">
-    <h2>Herramientas del Sistema Praxis</h2>
-    <p>
-      Praxis se aplica a través de herramientas concretas.
-      Cada una cumple una función específica dentro del sistema.
-    </p>
-
-    <div class="map">
-
-      <div class="node">
-        <img src="ebook1.png" alt="Ebook 1 – Claridad" style="width:100%; border-radius:12px; margin-bottom:16px;">
-        <h3>Ebook 1 · Claridad</h3>
-        <p>
-          Reduce el ruido mental y define qué merece tu energía.
-          El punto de entrada al sistema.
+<!-- HERRAMIENTAS DEL SISTEMA -->
+<section class="tools">
+    <div class="container">
+        <h2>Las herramientas del Sistema Praxis</h2>
+        <p class="tools-intro">
+            Praxis no se aplica con teoría, sino con herramientas concretas.
+            Cada ebook cumple una función específica dentro del sistema
+            y está diseñado para usarse en contextos reales, no ideales.
         </p>
-        <a href="ebook-1.html" class="tool-link">Ver herramienta →</a>
-      </div>
 
-      <div class="node">
-        <img src="ebook2.png" alt="Ebook 2 – Prioridad" style="width:100%; border-radius:12px; margin-bottom:16px;">
-        <h3>Ebook 2 · Prioridad</h3>
-        <p>
-          Aprende a elegir una sola acción con impacto real
-          cuando todo parece urgente.
-        </p>
-        <span style="color:#64748b; font-weight:600;">Disponible próximamente</span>
-      </div>
+        <div class="tools-grid">
 
-      <div class="node">
-        <img src="ebook3.png" alt="Ebook 3 – Ejecución" style="width:100%; border-radius:12px; margin-bottom:16px;">
-        <h3>Ebook 3 · Ejecución</h3>
-        <p>
-          Ejecuta sin fragmentarte.
-          Menos fricción, más avance real.
-        </p>
-        <span style="color:#64748b; font-weight:600;">Disponible próximamente</span>
-      </div>
+            <!-- Ebook 1 -->
+            <div class="tool-card featured">
+                <img src="ebook1.png" alt="Ebook 1 – Claridad">
+                <span class="tool-tag">Disponible ahora</span>
+                <h3>Ebook 1 · Claridad</h3>
+                <p class="tool-desc">
+                    Reduce el ruido mental y define qué merece tu energía.
+                    Es el punto de entrada al Sistema Praxis.
+                </p>
+                <ul class="tool-points">
+                    <li>✔ Orden mental inmediato</li>
+                    <li>✔ Decisiones con menos fricción</li>
+                    <li>✔ Enfoque incluso en días caóticos</li>
+                </ul>
+                <a href="ebook-1.html" class="tool-cta">Ver herramienta →</a>
+            </div>
 
+            <!-- Ebook 2 -->
+            <div class="tool-card">
+                <img src="ebook2.png" alt="Ebook 2 – Prioridad">
+                <span class="tool-tag muted">Próximamente</span>
+                <h3>Ebook 2 · Prioridad</h3>
+                <p class="tool-desc">
+                    Aprende a elegir una sola acción con impacto real
+                    cuando todo parece urgente.
+                </p>
+                <ul class="tool-points muted">
+                    <li>• Eliminación de falsas urgencias</li>
+                    <li>• Criterios de decisión claros</li>
+                    <li>• Menos dispersión diaria</li>
+                </ul>
+            </div>
+
+            <!-- Ebook 3 -->
+            <div class="tool-card">
+                <img src="ebook3.png" alt="Ebook 3 – Ejecución">
+                <span class="tool-tag muted">Próximamente</span>
+                <h3>Ebook 3 · Ejecución</h3>
+                <p class="tool-desc">
+                    Ejecuta sin fragmentarte.
+                    Menos fricción, más avance sostenido.
+                </p>
+                <ul class="tool-points muted">
+                    <li>• Ritmo sostenible</li>
+                    <li>• Menos abandono</li>
+                    <li>• Acción con intención</li>
+                </ul>
+            </div>
+
+        </div>
     </div>
-  </div>
-</section>    
+</section>
+  
     
 <!-- CONEXIÓN -->
 <section>
@@ -367,6 +493,7 @@
 
 </body>
 </html>
+
 
 
 
