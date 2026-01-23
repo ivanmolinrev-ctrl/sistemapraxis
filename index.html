@@ -80,15 +80,9 @@
 
         /* HERO */
         .hero {
-            padding: 80px 0 60px;
+            padding: 90px 0 70px;
             background-color: var(--azul-claro);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 48px;
-            align-items: center;
+            text-align: center;
         }
 
         .hero h1 {
@@ -100,18 +94,14 @@
 
         .hero p {
             font-size: 18px;
-            margin-bottom: 24px;
-            max-width: 520px;
+            margin-bottom: 18px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero strong {
             color: var(--azul-secundario);
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         /* SECCIÓN CUADRO VISUAL */
@@ -196,17 +186,12 @@
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero p {
-                margin: 0 auto 24px;
-            }
-
             nav {
                 display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
             }
         }
     </style>
@@ -230,20 +215,15 @@
 </header>
 
 <section class="hero">
-    <div class="container hero-grid">
-        <div>
-            <h1>Un sistema para pensar, decidir y avanzar mejor</h1>
-            <p>
-                <strong>Sistema Praxis</strong> transforma la claridad diaria en avance real.
-                No depende de fuerza de voluntad, sino de estructura, adaptación y enfoque.
-            </p>
-            <p>
-                Funciona incluso en días caóticos, de baja energía o alta presión.
-            </p>
-        </div>
-        <div class="hero-image">
-            <img src="cuadro-visual-sistema-praxis.png" alt="Cuadro Visual Sistema Praxis">
-        </div>
+    <div class="container">
+        <h1>Un sistema para pensar, decidir y avanzar mejor</h1>
+        <p>
+            <strong>Sistema Praxis</strong> transforma la claridad diaria en avance real.
+            No depende de fuerza de voluntad, sino de estructura, adaptación y enfoque.
+        </p>
+        <p>
+            Funciona incluso en días caóticos, de baja energía o alta presión.
+        </p>
     </div>
 </section>
 
