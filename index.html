@@ -2,19 +2,20 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Sistema Praxis</title>
+<title>El Sistema | Praxis</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --brand:#1e40af;
+  --brand:#1e3a8a;
+  --brand-soft:#dbeafe;
+  --accent:#0ea5e9;
   --ink:#0f172a;
   --muted:#475569;
   --line:#e5e7eb;
-  --bg:#f8fafc;
-  --soft:#eef2ff;
+  --bg:#f1f5f9;
+  --panel:#ffffff;
 }
 
 *{box-sizing:border-box}
@@ -24,19 +25,19 @@ body{
   font-family:Inter,system-ui;
   background:var(--bg);
   color:var(--ink);
-  line-height:1.65;
+  line-height:1.7;
 }
 
 /* HEADER */
 header{
-  background:#fff;
-  border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,var(--brand),#1d4ed8);
+  color:#fff;
 }
 
 nav{
-  max-width:1100px;
+  max-width:1400px;
   margin:auto;
-  padding:22px 32px;
+  padding:28px 48px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -45,114 +46,99 @@ nav{
 .brand{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:18px;
+  font-size:1.35rem;
   font-weight:600;
-  font-size:1.1rem;
 }
 
 .brand img{
-  height:56px;
+  height:78px;
 }
 
 nav a{
+  color:#e0e7ff;
   text-decoration:none;
-  color:var(--muted);
-  margin-left:28px;
-  font-size:0.95rem;
+  margin-left:32px;
+  font-size:1rem;
 }
 
-nav a:hover{color:var(--brand)}
+nav a:hover{color:#fff}
 
-/* SECTIONS */
-section{
-  max-width:1000px;
+/* LAYOUT */
+.wrapper{
+  max-width:1400px;
   margin:auto;
-  padding:90px 32px;
+  padding:100px 48px;
 }
 
-.alt{
-  background:var(--soft);
+.split{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:80px;
 }
 
-/* HERO */
-.hero h1{
-  font-size:3.2rem;
+/* TITLES */
+h1{
+  font-size:3.4rem;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:2.2rem;
   font-weight:600;
   margin-bottom:16px;
 }
 
-.hero p{
-  font-size:1.15rem;
-  max-width:700px;
-  color:var(--muted);
-}
-
-/* TITLES */
-h2{
-  font-size:2.1rem;
+h3{
+  font-size:1.3rem;
   font-weight:600;
-  margin-bottom:18px;
+  margin-bottom:8px;
 }
 
-.small{
-  color:var(--muted);
-  max-width:720px;
+p{color:var(--muted)}
+
+/* PANELS */
+.panel{
+  background:var(--panel);
+  padding:48px;
+  border-left:6px solid var(--brand);
 }
 
-/* SYSTEM SCHEMA */
-.schema{
-  margin-top:40px;
-  border-left:4px solid var(--brand);
-  padding-left:28px;
+.panel.soft{
+  background:var(--brand-soft);
 }
 
-.schema p{
-  margin:14px 0;
-  font-size:1rem;
-}
-
-/* GRID */
-.grid{
+/* SYSTEM MAP */
+.map{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(2,1fr);
   gap:32px;
   margin-top:40px;
 }
 
-.box{
+.node{
   background:#fff;
-  padding:28px;
-  border:1px solid var(--line);
+  padding:32px;
+  border-top:5px solid var(--accent);
 }
 
-/* CTA */
-.cta{
-  border-top:2px solid var(--line);
-  padding-top:60px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:24px;
-  padding:14px 30px;
-  border:2px solid var(--brand);
-  color:var(--brand);
-  text-decoration:none;
-  font-weight:600;
-}
-
-.btn:hover{
-  background:var(--brand);
-  color:#fff;
+/* PHILOSOPHY */
+.quote{
+  font-size:1.3rem;
+  font-weight:500;
+  color:var(--ink);
+  border-left:5px solid var(--accent);
+  padding-left:24px;
 }
 
 /* FOOTER */
 footer{
-  border-top:1px solid var(--line);
-  padding:40px 20px;
+  background:#020617;
+  color:#94a3b8;
+  padding:50px 20px;
   text-align:center;
-  color:var(--muted);
-  font-size:0.85rem;
+  font-size:0.9rem;
 }
 </style>
 </head>
@@ -166,62 +152,94 @@ footer{
     Sistema Praxis
   </div>
   <div>
-    <a href="#sistema">Sistema</a>
+    <a href="index.html">Inicio</a>
+    <a href="#">El Sistema</a>
     <a href="#ebooks">Ebooks</a>
   </div>
 </nav>
 </header>
 
-<section class="hero">
-<h1>El Sistema Praxis</h1>
+<section class="wrapper split">
+  <div>
+    <h1>El Sistema Praxis</h1>
+    <p>
+      Praxis no es motivación, ni productividad extrema, ni gestión del tiempo.
+      Es un sistema de decisión diseñado para personas que operan bajo presión
+      constante y necesitan claridad sin fricción.
+    </p>
+
+    <div class="panel">
+      <h2>Por qué existe</h2>
+      <p>
+        La mayoría de los sistemas fallan porque exigen más energía de la que
+        las personas realmente tienen. Praxis existe para reducir el desgaste
+        mental, no para aumentarlo.
+      </p>
+    </div>
+  </div>
+
+  <div class="panel soft">
+    <h2>Principio central</h2>
+    <p class="quote">
+      No necesitas hacer más cosas.
+      Necesitas decidir mejor.
+    </p>
+  </div>
+</section>
+
+<section class="wrapper">
+<h2>El mapa del sistema</h2>
 <p>
-Un sistema práctico para personas que trabajan intensamente,
-pero sienten que su avance no refleja su esfuerzo.
-</p>
-</section>
-
-<section class="alt">
-<h2>El problema que Praxis resuelve</h2>
-<p class="small">
-La mayoría de las personas no fallan por falta de disciplina,
-sino por tomar decisiones sin una estructura clara.
-</p>
-</section>
-
-<section id="sistema">
-<h2>Qué es el Sistema Praxis</h2>
-<p class="small">
-Praxis es una estructura de pensamiento y acción
-que te permite decidir mejor cada día sin agotarte.
+Praxis funciona como un ciclo continuo de pensamiento y acción.
+Cada componente existe para sostener al siguiente.
 </p>
 
-<div class="schema">
-<p><strong>Claridad</strong> · Definir qué resultado merece tu energía.</p>
-<p><strong>Prioridad</strong> · Elegir una sola acción que mueva el día.</p>
-<p><strong>Acción</strong> · Ejecutar sin fragmentación.</p>
-<p><strong>Revisión</strong> · Aprender y ajustar.</p>
+<div class="map">
+  <div class="node">
+    <h3>Claridad</h3>
+    <p>Define qué resultado merece tu energía hoy. Sin claridad, todo esfuerzo se dispersa.</p>
+  </div>
+
+  <div class="node">
+    <h3>Prioridad</h3>
+    <p>Selecciona una sola acción que tenga impacto real. Lo demás es ruido.</p>
+  </div>
+
+  <div class="node">
+    <h3>Acción</h3>
+    <p>Ejecuta sin fragmentarte. Una cosa, un bloque, una intención.</p>
+  </div>
+
+  <div class="node">
+    <h3>Revisión</h3>
+    <p>Aprende del resultado y ajusta. Praxis mejora contigo.</p>
+  </div>
 </div>
 </section>
 
-<section class="alt">
-<h2>Para quién es Praxis</h2>
+<section class="wrapper split">
+  <div class="panel">
+    <h2>Filosofía Praxis</h2>
+    <p>
+      Praxis parte de una idea simple: el progreso no depende del esfuerzo bruto,
+      sino de la calidad de las decisiones repetidas en el tiempo.
+    </p>
+    <p>
+      El sistema no busca optimizar cada minuto, sino proteger tu energía
+      para lo que realmente importa.
+    </p>
+  </div>
 
-<div class="grid">
-  <div class="box">Personas que trabajan mucho pero avanzan poco.</div>
-  <div class="box">Profesionales con exceso de responsabilidades.</div>
-  <div class="box">Emprendedores y gestores de proyectos.</div>
-  <div class="box">Cualquier persona que necesita claridad diaria.</div>
-</div>
-</section>
-
-<section class="cta" id="ebooks">
-<h2>Accede a los Ebooks del Sistema</h2>
-<p class="small">
-Cada ebook desarrolla una parte del sistema.
-Puedes empezar por el primero y avanzar a tu ritmo.
-</p>
-
-<a href="ebook1.html" class="btn">Ver Ebook 1</a>
+  <div class="panel soft">
+    <h2>Cómo se conecta todo</h2>
+    <p>
+      Claridad genera foco.
+      Foco permite priorizar.
+      Priorizar hace posible actuar.
+      Actuar produce información.
+      La información mejora la claridad.
+    </p>
+  </div>
 </section>
 
 <footer>
@@ -230,6 +248,8 @@ Sistema Praxis © 2026
 
 </body>
 </html>
+
+
 
 
 
