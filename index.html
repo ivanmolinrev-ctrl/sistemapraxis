@@ -2,23 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <title>Sistema Praxis | Claridad que se ejecuta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Praxis | Claridad diaria para avanzar</title>
+    <meta name="description" content="Sistema Praxis: un sistema práctico para tomar mejores decisiones diarias y avanzar con claridad.">
 
-    <!-- SEO -->
-    <meta name="description" content="Sistema Praxis: claridad diaria para avanzar sin agotarte. Un sistema práctico de toma de decisiones.">
-
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #1e3a8a;
-            --secondary: #2563eb;
-            --dark: #0f172a;
+            --blue-dark: #0B1F3B;
+            --blue-main: #2563EB;
+            --blue-soft: #60A5FA;
+            --gray-dark: #0F172A;
             --gray: #475569;
-            --light: #f8fafc;
-            --border: #e5e7eb;
+            --gray-light: #F1F5F9;
+            --white: #FFFFFF;
         }
 
         * {
@@ -28,16 +27,15 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.7;
+            background-color: var(--gray-light);
+            color: var(--gray-dark);
+            line-height: 1.75;
         }
 
         /* HEADER */
         header {
-            background: #ffffff;
-            border-bottom: 1px solid var(--border);
-            padding: 20px 40px;
+            background: linear-gradient(135deg, var(--blue-dark), #020617);
+            padding: 22px 40px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -47,143 +45,154 @@
             max-width: 1200px;
             margin: auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-weight: 600;
+            gap: 14px;
             font-size: 1.1rem;
-            color: var(--dark);
+            font-weight: 600;
+            color: var(--white);
         }
 
         .logo img {
-            height: 42px;
+            height: 46px;
         }
 
         nav a {
-            margin-left: 24px;
+            color: #CBD5F5;
+            margin-left: 28px;
             text-decoration: none;
-            color: var(--gray);
             font-weight: 500;
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--white);
+        }
+
+        /* HERO */
+        .hero {
+            background: radial-gradient(circle at top, #1e3a8a, var(--blue-dark));
+            color: var(--white);
+            padding: 140px 40px 120px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #BFDBFE;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 30px auto 45px;
+            font-size: 1.1rem;
+            color: #E0E7FF;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 38px;
+            background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
         }
 
         /* SECTIONS */
         section {
             max-width: 1200px;
             margin: auto;
-            padding: 100px 40px;
+            padding: 110px 40px;
         }
 
-        .alt {
-            background-color: #eef2ff;
-        }
-
-        h1 {
-            font-size: 3.2rem;
-            margin-bottom: 10px;
+        .section-dark {
+            background-color: #020617;
+            color: var(--white);
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             margin-bottom: 20px;
         }
 
-        h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
         p {
-            color: var(--gray);
             max-width: 720px;
+            color: var(--gray);
         }
 
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding-top: 120px;
+        .section-dark p {
+            color: #CBD5F5;
         }
 
-        .hero p {
-            margin: 20px auto 40px;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: var(--secondary);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            background: var(--primary);
-        }
-
-        /* GRID */
-        .grid-4 {
+        /* CARDS */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 40px;
+            margin-top: 60px;
         }
 
         .card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 14px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            background: var(--white);
+            padding: 34px;
+            border-radius: 18px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: var(--blue-dark);
         }
 
         /* SYSTEM IMAGE */
         .system-image {
-            margin-top: 50px;
+            margin-top: 70px;
             text-align: center;
         }
 
         .system-image img {
             max-width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.25);
         }
 
-        /* QUOTE */
-        .quote {
+        /* CTA */
+        .cta {
             text-align: center;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--dark);
+        }
+
+        .cta p {
+            margin: 30px auto 50px;
         }
 
         /* FOOTER */
         footer {
-            background: var(--dark);
-            color: #ffffff;
+            background: #020617;
             text-align: center;
-            padding: 50px 20px;
-        }
-
-        footer p {
-            color: #c7d2fe;
-            margin: 0;
+            padding: 60px 20px;
+            color: #94A3B8;
         }
 
         @media (max-width: 768px) {
-            h1 {
+            .hero h1 {
                 font-size: 2.4rem;
-            }
-            h2 {
-                font-size: 1.8rem;
             }
         }
     </style>
@@ -191,103 +200,87 @@
 
 <body>
 
-<!-- HEADER -->
 <header>
     <nav>
         <div class="logo">
-            <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
+            <img src="logo-sistema-paxis.png" alt="Sistema Praxis">
             Sistema Praxis
         </div>
         <div>
-            <a href="#inicio">Inicio</a>
-            <a href="#sistema">El Sistema</a>
+            <a href="#sistema">Sistema</a>
             <a href="#ebooks">Ebooks</a>
         </div>
     </nav>
 </header>
 
-<!-- HERO -->
-<section id="inicio" class="hero">
+<section class="hero">
     <h1>El Sistema Praxis</h1>
-    <h2>Claridad diaria para avanzar sin agotarte</h2>
+    <h2>Claridad que se ejecuta</h2>
     <p>
-        Praxis es un sistema práctico de toma de decisiones para personas que trabajan mucho,
-        pero sienten que su esfuerzo no siempre se traduce en avance real.
+        Un sistema práctico para personas que trabajan duro,
+        pero necesitan convertir esfuerzo en avance real.
     </p>
-    <a href="#ebooks" class="btn">Acceder al Sistema</a>
+    <a href="#ebooks" class="btn">Explorar el Sistema</a>
 </section>
 
-<!-- PROBLEMA -->
-<section class="alt">
-    <h2>Trabajas mucho. Avanzas poco.</h2>
+<section>
+    <h2>No estás desorganizado. Estás sin sistema.</h2>
     <p>
-        No es falta de disciplina ni de capacidad.
-        Es la ausencia de un sistema claro para decidir qué merece tu energía cada día.
+        Praxis no es motivación ni productividad vacía.
+        Es una estructura clara para decidir, actuar y revisar
+        sin agotarte ni improvisar cada día.
     </p>
 </section>
 
-<!-- SISTEMA -->
-<section id="sistema">
-    <h2>Cómo funciona el Sistema Praxis</h2>
+<section class="section-dark" id="sistema">
+    <h2>Cómo funciona Praxis</h2>
     <p>
-        Un sistema simple que conecta claridad, prioridad, acción y revisión
-        en un flujo adaptable a cualquier día.
+        Cuatro pilares que se repiten cada día,
+        adaptándose a cualquier profesión o contexto.
     </p>
 
     <div class="system-image">
-        <!-- Aquí va la imagen del sistema -->
-        <img src="sistema-praxis.png" alt="Cuadro visual del Sistema Praxis">
+        <img src="sistema-praxis.png" alt="Sistema Praxis">
     </div>
 </section>
 
-<!-- PILARES -->
-<section class="alt">
-    <div class="grid-4">
+<section>
+    <div class="grid">
         <div class="card">
             <h3>Claridad</h3>
-            <p>Define el resultado antes de empezar. No organizas tareas, estableces dirección.</p>
+            <p>Definir qué resultado merece tu energía hoy.</p>
         </div>
         <div class="card">
             <h3>Prioridad</h3>
-            <p>Identifica la acción que realmente importa. El resto se ordena o se descarta.</p>
+            <p>Elegir la acción que realmente mueve la aguja.</p>
         </div>
         <div class="card">
             <h3>Acción</h3>
-            <p>Ejecuta con intención. Menos fragmentación, más impacto.</p>
+            <p>Ejecutar sin fragmentación ni ruido innecesario.</p>
         </div>
         <div class="card">
             <h3>Revisión</h3>
-            <p>Ajusta sin castigarte. Aprende del día y mejora el siguiente.</p>
+            <p>Aprender del día para mejorar el siguiente.</p>
         </div>
     </div>
 </section>
 
-<!-- EBOOKS -->
-<section id="ebooks">
-    <h2>Los Ebooks del Sistema Praxis</h2>
+<section class="cta" id="ebooks">
+    <h2>Comienza con el Ebook 1</h2>
     <p>
-        Cada ebook desarrolla una etapa del sistema.  
-        Puedes empezar por el primero y avanzar a tu ritmo.
+        El punto de entrada al Sistema Praxis.
+        Diseñado para generar claridad inmediata.
     </p>
-
-    <a href="ebook1.html" class="btn">Ver Ebook 1</a>
+    <a href="ebook1.html" class="btn">Acceder al Ebook</a>
 </section>
 
-<!-- FRASE -->
-<section>
-    <p class="quote">
-        No necesitas más disciplina.<br>
-        Necesitas un sistema que piense contigo.
-    </p>
-</section>
-
-<!-- FOOTER -->
 <footer>
-    <p>Sistema Praxis © 2026</p>
+    Sistema Praxis © 2026
 </footer>
 
 </body>
 </html>
+
 
 
 
