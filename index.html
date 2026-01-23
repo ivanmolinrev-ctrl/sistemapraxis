@@ -1,236 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Sistema Praxis | Método claro para trabajar, gestionar y decidir</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Praxis | Claridad diaria para avanzar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- SEO básico -->
+    <meta name="description" content="Sistema Praxis: un método práctico para avanzar con claridad sin agotarte.">
+    <meta name="author" content="Sistema Praxis">
 
-<style>
-:root {
-    --azul-principal: #1F4E79;
-    --azul-secundario: #4A6FA5;
-    --gris-header-1: #2E3440;
-    --gris-header-2: #3B4252;
-    --gris-fondo: #F2F4F7;
-    --gris-claro: #FAFBFC;
-    --texto: #2E2E2E;
-    --blanco: #FFFFFF;
-}
+    <!-- Estilos base (luego los separamos en CSS) -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1f2933;
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        header {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 20px 40px;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: var(--gris-fondo);
-    color: var(--texto);
-    line-height: 1.7;
-}
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, var(--gris-header-1), var(--gris-header-2));
-    text-align: center;
-    padding: 100px 20px 90px;
-}
+        header nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
 
-.logo-img {
-    max-width: 360px;
-    margin-bottom: 40px;
-}
+        section {
+            padding: 80px 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-header h1 {
-    font-size: 36px;
-    font-weight: 700;
-    max-width: 920px;
-    margin: 0 auto 22px;
-    color: var(--blanco);
-}
+        h1, h2, h3 {
+            margin-top: 0;
+        }
 
-header p {
-    font-size: 18px;
-    max-width: 780px;
-    margin: 0 auto 38px;
-    color: #DDE1E7;
-}
+        .hero {
+            text-align: center;
+        }
 
-.btn-primary {
-    display: inline-block;
-    padding: 16px 42px;
-    background: var(--azul-principal);
-    color: var(--blanco);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
+        .hero h1 {
+            font-size: 3rem;
+        }
 
-.btn-primary:hover {
-    background: var(--azul-secundario);
-}
+        .hero h2 {
+            font-weight: 400;
+            color: #475569;
+        }
 
-/* SECTIONS */
-.section {
-    max-width: 1150px;
-    margin: auto;
-    background: var(--blanco);
-    padding: 75px 35px;
-    margin-top: 65px;
-    border-radius: 16px;
-}
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
 
-.section h2 {
-    font-size: 30px;
-    color: var(--azul-principal);
-    margin-bottom: 18px;
-}
+        .alt-bg {
+            background-color: #e5e7eb;
+        }
 
-.section p {
-    max-width: 860px;
-    font-size: 17px;
-}
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
 
-/* PRODUCTS */
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
-    margin-top: 45px;
-}
-
-.product-card {
-    background: var(--gris-claro);
-    border-radius: 16px;
-    padding: 38px 32px 42px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-top: 6px solid var(--azul-principal);
-}
-
-.product-card h3 {
-    font-size: 22px;
-    color: var(--azul-principal);
-    margin-top: 0;
-}
-
-.product-card p {
-    font-size: 16px;
-    margin-bottom: 22px;
-}
-
-.price {
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--azul-secundario);
-    margin-bottom: 26px;
-}
-
-/* INSTITUTIONAL */
-.institutional {
-    background: linear-gradient(180deg, #F6F9FC, #FFFFFF);
-    border: 2px solid #E3EAF2;
-}
-
-/* FOOTER */
-footer {
-    margin-top: 90px;
-    padding: 35px;
-    text-align: center;
-    font-size: 14px;
-    color: #777;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 28px;
-    }
-    .logo-img {
-        max-width: 280px;
-    }
-    .section {
-        padding: 55px 25px;
-    }
-}
-</style>
+        footer {
+            background: #0f172a;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px;
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- HEADER / NAV -->
 <header>
-    <img src="logo-sistema-praxis.png" alt="Sistema Praxis" class="logo-img">
-
-    <h1>Método claro para trabajar, gestionar y decidir mejor</h1>
-
-    <p>
-        Sistema Praxis convierte conocimiento en sistemas prácticos
-        para personas, profesionales y organizaciones que buscan claridad,
-        estructura y resultados reales.
-    </p>
-
-    <a href="ENLACE_HOTMART_CHECKLIST" class="btn-primary">
-        Descargar checklist gratuito
-    </a>
+    <nav>
+        <div><strong>Sistema Praxis</strong></div>
+        <div>
+            <a href="#inicio">Inicio</a>
+            <a href="#sistema">El Sistema</a>
+            <a href="#ebooks">Ebooks</a>
+            <a href="#acceder">Acceder</a>
+        </div>
+    </nav>
 </header>
 
-<section class="section">
-    <h2>¿Qué es Sistema Praxis?</h2>
+<!-- HERO -->
+<section id="inicio" class="hero">
+    <h1>El Sistema Praxis</h1>
+    <h2>Claridad diaria para avanzar sin agotarte</h2>
     <p>
-        Sistema Praxis es un marco metodológico que te ayuda a organizar
-        tu forma de trabajar, tomar mejores decisiones y gestionar procesos
-        con lógica, método y coherencia.
+        Praxis es un sistema práctico de toma de decisiones para personas que trabajan mucho,
+        pero sienten que su esfuerzo no siempre se traduce en avance real.
+    </p>
+    <a href="#ebooks" class="btn">Acceder al Sistema</a>
+</section>
+
+<!-- PROBLEMA -->
+<section class="alt-bg">
+    <h2>Trabajas mucho. Avanzas poco.</h2>
+    <p>
+        No es falta de disciplina ni de capacidad.  
+        Es la ausencia de un sistema claro para decidir qué merece tu energía cada día.
     </p>
 </section>
 
-<section class="section">
-    <h2>Soluciones digitales</h2>
+<!-- SISTEMA VISUAL -->
+<section id="sistema">
+    <h2>Cómo funciona el Sistema Praxis</h2>
+    <p>
+        Un sistema simple que conecta claridad, prioridad, acción y revisión
+        en un flujo adaptable a cualquier día.
+    </p>
 
-    <div class="products">
+    <!-- Aquí luego irá la imagen del sistema -->
+    <p><em>[Imagen del Sistema Praxis]</em></p>
+</section>
 
-        <div class="product-card">
-            <h3>📘 Sistema Praxis</h3>
-            <p>La base para dejar de improvisar y empezar a trabajar con un sistema claro.</p>
-            <div class="price">USD 12</div>
-            <a href="ENLACE_HOTMART_EBOOK1" class="btn-primary">Comprar ebook</a>
+<!-- LOS 4 PILARES -->
+<section class="alt-bg">
+    <div class="grid-4">
+        <div>
+            <h3>Claridad</h3>
+            <p>Define el resultado antes de empezar. No organizas tareas, estableces dirección.</p>
         </div>
-
-        <div class="product-card">
-            <h3>📗 Sistema Praxis Profesional</h3>
-            <p>Diseña procesos sólidos, claros y repetibles para el ejercicio profesional.</p>
-            <div class="price">USD 39</div>
-            <a href="ENLACE_HOTMART_EBOOK2" class="btn-primary">Comprar ebook</a>
+        <div>
+            <h3>Prioridad</h3>
+            <p>Identifica la acción que realmente importa. El resto se ordena o se descarta.</p>
         </div>
-
-        <div class="product-card">
-            <h3>📕 Sistema Praxis Gestión</h3>
-            <p>Estructura equipos, decisiones y sistemas de gestión organizacional.</p>
-            <div class="price">USD 69</div>
-            <a href="ENLACE_HOTMART_EBOOK3" class="btn-primary">Comprar ebook</a>
+        <div>
+            <h3>Acción</h3>
+            <p>Ejecuta con intención. Menos fragmentación, más impacto.</p>
         </div>
-
+        <div>
+            <h3>Revisión</h3>
+            <p>Ajusta sin castigarte. Aprende del día y mejora el siguiente.</p>
+        </div>
     </div>
 </section>
 
-<section class="section institutional">
-    <h2>🏛️ Solución Institucional</h2>
-    <p>
-        Modelo de licenciamiento metodológico para empresas,
-        entidades públicas, ONG e instituciones educativas.
-    </p>
-
-    <a href="mailto:contacto@sistemapraxis.com" class="btn-primary">
-        Solicitar información institucional
-    </a>
+<!-- ADAPTABILIDAD -->
+<section>
+    <h2>Un sistema que se adapta</h2>
+    <p><strong>Día normal:</strong> Claridad → Prioridad → Acción → Revisión</p>
+    <p><strong>Día saturado:</strong> Resultado mínimo → Acción viable → Cierre consciente</p>
+    <p><strong>Día de baja energía:</strong> Reducir → Mantener continuidad → No abandonar</p>
 </section>
 
-<footer>
-    © 2026 Sistema Praxis · Método, estructura y claridad
+<!-- EBOOKS -->
+<section id="ebooks" class="alt-bg">
+    <h2>Los Ebooks del Sistema Praxis</h2>
+    <p>
+        Cada ebook desarrolla una etapa del sistema.  
+        Puedes empezar por el primero y avanzar a tu ritmo.
+    </p>
+
+    <p>
+        <strong>Ebook 1:</strong> Fundamentos del Sistema Praxis  
+        <br>
+        <a href="ebook1.html" class="btn">Ver Ebook 1</a>
+    </p>
+</section>
+
+<!-- FRASE FINAL -->
+<section>
+    <h2 style="text-align:center;">
+        No necesitas más disciplina.<br>
+        Necesitas un sistema que piense contigo.
+    </h2>
+</section>
+
+<!-- FOOTER -->
+<footer id="acceder">
+    <p>Sistema Praxis © 2026</p>
 </footer>
 
 </body>
 </html>
+
+
