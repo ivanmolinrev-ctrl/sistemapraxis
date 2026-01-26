@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matriz Praxis | Herramienta Exclusiva</title>
+
+<style>
+:root{
+  --primary:#0b3c5d;
+  --secondary:#328cc1;
+  --accent:#f4d35e;
+  --bg:#f8f9fa;
+}
+
+body{
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background:var(--bg);
+  color:#333;
+}
+
+/* ====== CONTENEDORES ====== */
+.wrapper{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.hidden{display:none;}
+
+/* ====== BLOQUEO ====== */
+.lock{
+  max-width:420px;
+  margin:120px auto;
+  background:#fff;
+  padding:40px;
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  text-align:center;
+}
+
+.lock h1{
+  margin-bottom:10px;
+  color:var(--primary);
+}
+
+.lock p{
+  font-size:14px;
+  color:#666;
+}
+
+.lock input{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+.lock button{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:8px;
+  background:var(--secondary);
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.lock button:hover{
+  background:var(--primary);
+}
+
+/* ====== APP ====== */
+.header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.header h1{
+  color:var(--primary);
+}
+
+.matrix{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.card h3{
+  margin-top:0;
+  color:var(--secondary);
+}
+
+.card textarea{
+  width:100%;
+  min-height:120px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  padding:10px;
+  resize:vertical;
+}
+
+.actions{
+  margin-top:40px;
+  text-align:center;
+}
+
+.actions button{
+  padding:14px 24px;
+  border:none;
+  border-radius:10px;
+  background:var(--accent);
+  font-size:16px;
+  cursor:pointer;
+}
+
+.actions button:hover{
+  opacity:.85;
+}
+
+footer{
+  margin-top:60px;
+  text-align:center;
+  font-size:13px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ====== BLOQUEO ====== -->
+<div id="lockScreen" class="lock">
+  <h1>Acceso exclusivo</h1>
+  <p>Esta herramienta está disponible solo para compradores del Ebook 1.</p>
+  <input type="password" id="accessKey" placeholder="Introduce tu clave">
+  <button onclick="unlock()">Acceder a la herramienta</button>
+  <p id="error" style="color:red;display:none;">Clave incorrecta</p>
+</div>
+
+<!-- ====== APP ====== -->
+<div id="app" class="wrapper hidden">
+
+  <div class="header">
+    <h1>Matriz Praxis</h1>
+    <p>Convierte ideas en decisiones claras y accionables</p>
+  </div>
+
+  <div class="card">
+    <h3>1. Problema central</h3>
+    <textarea id="problema" placeholder="Describe el problema o desafío principal..."></textarea>
+  </div>
+
+  <div class="matrix" style="margin-top:30px;">
+    <div class="card">
+      <h3>2. Qué está pasando</h3>
+      <textarea id="actual"></textarea>
+    </div>
+    <div class="card">
+      <h3>3. Qué debería pasar</h3>
+      <textarea id="ideal"></textarea>
+    </div>
+    <div class="card">
+      <h3>4. Qué depende de mí</h3>
+      <textarea id="control"></textarea>
+    </div>
+    <div class="card">
+      <h3>5. Próxima acción concreta</h3>
+      <textarea id="accion"></textarea>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="exportar()">Copiar resultados</button>
+  </div>
+
+  <footer>
+    Herramienta incluida en Ebook 1 · Uso personal
+  </footer>
+
+</div>
+
+<script>
+// ====== CONFIGURACIÓN ======
+const CLAVE_CORRECTA = "PRAXIS-2026"; // cambia esta clave cuando quieras
+
+function unlock(){
+  const input = document.getElementById("accessKey").value;
+  if(input === CLAVE_CORRECTA){
+    document.getElementById("lockScreen").style.display="none";
+    document.getElementById("app").classList.remove("hidden");
+  }else{
+    document.getElementById("error").style.display="block";
+  }
+}
+
+function exportar(){
+  const texto = `
+PROBLEMA:
+${problema.value}
+
+QUE PASA:
+${actual.value}
+
+QUE DEBERIA PASAR:
+${ideal.value}
+
+QUE DEPENDE DE MI:
+${control.value}
+
+PROXIMA ACCION:
+${accion.value}
+  `;
+  navigator.clipboard.writeText(texto);
+  alert("Contenido copiado. Pégalo en la plantilla o donde lo necesites.");
+}
+</script>
+
+</body>
+</html>
