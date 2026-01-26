@@ -2,200 +2,192 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Ebook 1 | Sistema Praxis</title>
+<title>Ebook 1 · Claridad | Sistema Praxis</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --brand:#0f2a44;
-  --brand-soft:#1e3a5f;
-  --accent:#f59e0b;
-  --ink:#0f172a;
-  --muted:#475569;
-  --bg:#f8fafc;
-  --panel:#ffffff;
+  --azul:#0d3b66;
+  --azul2:#1f6fae;
+  --fondo:#f5f9fd;
+  --texto:#1f2933;
 }
 
-*{box-sizing:border-box}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-  margin:0;
-  font-family:Inter,system-ui;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.7;
+  font-family:'Inter',sans-serif;
+  background:#fff;
+  color:var(--texto);
+  line-height:1.6;
 }
+
+.container{max-width:1100px;margin:auto;padding:0 24px}
 
 /* HEADER */
 header{
-  background:linear-gradient(90deg,var(--brand),var(--brand-soft));
+  background:linear-gradient(135deg,var(--azul),var(--azul2));
+  color:#fff;
+  padding:24px 0;
 }
-
-nav{
-  max-width:1200px;
-  margin:auto;
-  padding:26px 40px;
+.header-content{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  font-size:1.3rem;
-  font-weight:600;
-  color:#fff;
-}
-
-.brand img{height:68px}
-
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:52px}
+.logo span{font-weight:700;font-size:20px}
 nav a{
-  color:#c7d2fe;
+  color:#fff;
   text-decoration:none;
-  margin-left:28px;
-  font-weight:500;
+  margin-left:24px;
+  opacity:.9;
 }
-
-nav a:hover{color:#fff}
+nav a:hover{opacity:1}
 
 /* HERO */
 .hero{
-  max-width:1200px;
-  margin:auto;
-  padding:120px 40px 100px;
+  background:var(--fondo);
+  padding:90px 0 70px;
+}
+.hero-grid{
   display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:80px;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
   align-items:center;
 }
-
 .hero h1{
-  font-size:3.4rem;
-  line-height:1.12;
+  font-size:44px;
+  color:var(--azul);
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:18px;
   margin-bottom:24px;
 }
-
-.hero h1 span{
-  color:var(--accent);
+.hero ul{
+  margin-bottom:30px;
 }
-
-.hero p{
-  font-size:1.15rem;
-  color:var(--muted);
-  margin-bottom:36px;
-  max-width:520px;
+.hero li{
+  margin-bottom:10px;
 }
-
-.cta{
-  display:inline-block;
-  background:linear-gradient(90deg,var(--accent),#fbbf24);
-  color:#1f2937;
-  padding:18px 38px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  font-size:1.05rem;
-  box-shadow:0 10px 30px rgba(245,158,11,.25);
-}
-
-.cta:hover{transform:translateY(-2px)}
-
 .hero img{
   width:100%;
-  border-radius:18px;
-  box-shadow:0 25px 60px rgba(15,23,42,.25);
+  border-radius:16px;
+  box-shadow:0 25px 60px rgba(0,0,0,.18);
 }
 
-/* SECTIONS */
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:100px 40px;
+/* CTA */
+.cta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:14px 26px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+}
+.btn-primary{
+  background:var(--azul);
+  color:#fff;
+}
+.btn-secondary{
+  border:2px solid var(--azul);
+  color:var(--azul);
 }
 
-.section h2{
-  font-size:2.4rem;
-  margin-bottom:18px;
+/* SECCIONES */
+section{padding:80px 0}
+h2{
+  font-size:32px;
+  color:var(--azul);
+  margin-bottom:20px;
 }
 
-.section h2 span{
-  color:var(--brand-soft);
+/* INCLUYE */
+.includes{
+  background:#fff;
 }
-
-.section p{
-  color:var(--muted);
-  max-width:680px;
-}
-
-/* FEATURES */
-.features{
+.cards{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:36px;
-  margin-top:60px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;
+  margin-top:40px;
 }
-
-.feature{
-  background:var(--panel);
-  padding:42px 36px;
+.card{
+  background:#fff;
+  padding:32px;
   border-radius:14px;
-  box-shadow:0 10px 30px rgba(2,6,23,.06);
-  position:relative;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
+.card h3{color:var(--azul2);margin-bottom:12px}
 
-.feature::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:6px;
-  background:linear-gradient(90deg,var(--accent),#fde68a);
-  border-radius:14px 14px 0 0;
-}
-
-.feature h3{
-  margin-bottom:12px;
-  font-size:1.25rem;
-}
-
-/* FINAL CTA */
-.final{
-  background:linear-gradient(180deg,#020617,#020617);
-  color:#e5e7eb;
+/* ACCESO */
+.access{
+  background:var(--fondo);
   text-align:center;
-  padding:110px 30px;
+}
+.access input{
+  padding:14px;
+  width:280px;
+  max-width:100%;
+  border-radius:8px;
+  border:1px solid #cbd5e1;
+  margin-right:10px;
+}
+.access button{
+  padding:14px 22px;
+  border:none;
+  border-radius:8px;
+  background:var(--azul);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
 }
 
-.final h2{
-  font-size:2.6rem;
-  margin-bottom:22px;
+/* ZONA PREMIUM */
+#premium{
+  display:none;
+  padding-top:60px;
 }
-
-.final p{
-  color:#94a3b8;
-  margin-bottom:40px;
-  font-size:1.05rem;
+.premium-box{
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
 }
-
-/* QUOTE */
-.final-quote{
-  font-style:italic;
-  font-size:1.15rem;
-  color:#c7d2fe;
-  margin-top:50px;
+.tool{
+  margin-top:40px;
+  padding:24px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+}
+.tool textarea{
+  width:100%;
+  height:120px;
+  padding:14px;
+  margin-top:12px;
+  border-radius:8px;
+  border:1px solid #cbd5e1;
 }
 
 /* FOOTER */
 footer{
-  background:#020617;
-  color:#94a3b8;
-  padding:26px;
+  background:#0a2540;
+  color:#cbd5e1;
   text-align:center;
-  font-size:.85rem;
+  padding:26px;
+  margin-top:80px;
+}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  nav{display:none}
 }
 </style>
 </head>
@@ -203,115 +195,91 @@ footer{
 <body>
 
 <header>
-<nav>
-  <div class="brand">
-    <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
-    Sistema Praxis
+  <div class="container header-content">
+    <div class="logo">
+      <img src="logo-sistema-praxis.png">
+      <span>SISTEMA PRAXIS</span>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="el-sistema.html">El Sistema</a>
+      <a href="#">Contacto</a>
+    </nav>
   </div>
-  <div>
-    <a href="index.html">Inicio</a>
-    <a href="el-sistema.html">El Sistema</a>
-    <a href="#">Contacto</a>
-  </div>
-</nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>Un sistema para <span>pensar mejor</span>,<br>
-        decidir con claridad<br>
-        y avanzar sin desgaste</h1>
-
-    <p>
-      Ebook 1 del Sistema Praxis no es motivación.
-      Es una estructura mental diseñada para personas que
-      piensan demasiado, se saturan fácil y necesitan orden
-      para decidir con confianza.
-    </p>
-
-    <a href="#" class="cta">Acceder al Sistema Praxis</a>
+  <div class="container hero-grid">
+    <div>
+      <h1>Ebook 1 · Claridad</h1>
+      <p>
+        Deja de tomar decisiones agotado.  
+        Praxis Claridad es una herramienta práctica para reducir ruido mental
+        y saber exactamente qué merece tu energía hoy.
+      </p>
+      <ul>
+        <li>✔ Menos saturación mental</li>
+        <li>✔ Decisiones más simples y firmes</li>
+        <li>✔ Enfoque aplicable desde el primer día</li>
+      </ul>
+      <div class="cta">
+        <a href="https://TU-LINK-DE-PAGO.com" class="btn btn-primary">Comprar ahora</a>
+        <a href="#acceso" class="btn btn-secondary">Ya tengo acceso</a>
+      </div>
+    </div>
+    <img src="ebook1.png" alt="Ebook Claridad">
   </div>
-
-  <img src="ebook1.png" alt="Ebook Sistema Praxis">
 </section>
 
-<!-- VALUE -->
-<section class="section">
-  <h2>Esto es para ti si <span>hoy sientes</span>:</h2>
-
-  <div class="features">
-    <div class="feature">
-      <h3>Sobrecarga mental constante</h3>
-      <p>
-        Demasiadas ideas, demasiadas opciones y una sensación
-        permanente de no avanzar.
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>Decisiones postergadas</h3>
-      <p>
-        Sabes qué hacer, pero dudas, cambias de rumbo
-        o te quedas paralizado.
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>Cansancio sin resultados</h3>
-      <p>
-        Mucho esfuerzo, poca claridad y una disciplina
-        que no se sostiene.
-      </p>
+<section class="includes">
+  <div class="container">
+    <h2>¿Qué incluye tu acceso?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Ebook Claridad</h3>
+        <p>Marco mental práctico para reducir ruido y definir foco.</p>
+      </div>
+      <div class="card">
+        <h3>Matriz Praxis</h3>
+        <p>Herramienta aplicada para tomar decisiones sin fricción.</p>
+      </div>
+      <div class="card">
+        <h3>Plantilla Excel</h3>
+        <p>Formato editable para aplicar el sistema en tu día real.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INCLUDES -->
-<section class="section">
-  <h2>¿Qué obtienes con <span>Ebook 1</span>?</h2>
+<section class="access" id="acceso">
+  <div class="container">
+    <h2>Acceso al contenido</h2>
+    <p>Ingresa la clave que recibiste al comprar</p>
+    <br>
+    <input type="password" id="key" placeholder="Clave de acceso">
+    <button onclick="unlock()">Ingresar</button>
 
-  <div class="features">
-    <div class="feature">
-      <h3>El marco mental Praxis</h3>
-      <p>
-        Una forma simple de ordenar pensamientos
-        y eliminar ruido innecesario.
-      </p>
+    <div id="premium">
+      <div class="premium-box">
+        <h2>Zona Praxis · Claridad</h2>
+        <p>Bienvenido. Aquí comienza la aplicación real del sistema.</p>
+
+        <div class="tool">
+          <h3>Mini-App · Matriz de Claridad</h3>
+          <p>Escribe todo lo que ocupa tu mente. Luego reduce a una sola prioridad.</p>
+          <textarea placeholder="Escribe aquí tus pendientes, ideas o preocupaciones…"></textarea>
+        </div>
+
+        <div class="tool">
+          <h3>Descargas</h3>
+          <p>
+            <a href="plantilla-praxis.xlsx">📊 Descargar plantilla Excel</a><br><br>
+            <a href="ebook-claridad.pdf">📘 Descargar ebook</a>
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="feature">
-      <h3>La Matriz Praxis</h3>
-      <p>
-        Herramienta práctica para transformar confusión
-        en decisiones accionables.
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>Acceso al sistema</h3>
-      <p>
-        Entrada al entorno Praxis donde el sistema
-        trabaja contigo, no contra ti.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final">
-  <h2>La claridad no llega pensando más.<br>
-      Llega usando un mejor sistema.</h2>
-
-  <p>
-    Sistema Praxis está diseñado para personas que
-    quieren avanzar con menos fricción y más sentido.
-  </p>
-
-  <a href="#" class="cta">Empezar ahora</a>
-
-  <div class="final-quote">
-    “No necesitas más disciplina. Necesitas un sistema que piense contigo.”
   </div>
 </section>
 
@@ -319,6 +287,25 @@ footer{
 © 2026 Sistema Praxis · Claridad que genera avance
 </footer>
 
+<script>
+function unlock(){
+  const validKeys=[
+    "PRAXIS-CLARIDAD-01",
+    "PRAXIS-CLARIDAD-02",
+    "PRAXIS-TEST-2026"
+  ];
+  const input=document.getElementById("key").value.trim();
+  if(validKeys.includes(input)){
+    document.getElementById("premium").style.display="block";
+    alert("Acceso concedido");
+  }else{
+    alert("Clave incorrecta");
+  }
+}
+</script>
+
 </body>
 </html>
+
+
 
