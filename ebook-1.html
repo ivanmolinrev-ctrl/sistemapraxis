@@ -13,6 +13,7 @@
   --azul2:#1f6fae;
   --fondo:#f5f9fd;
   --texto:#1f2933;
+  --gris:#64748b;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -39,13 +40,6 @@ header{
 .logo{display:flex;align-items:center;gap:12px}
 .logo img{height:52px}
 .logo span{font-weight:700;font-size:20px}
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:24px;
-  opacity:.9;
-}
-nav a:hover{opacity:1}
 
 /* HERO */
 .hero{
@@ -67,24 +61,13 @@ nav a:hover{opacity:1}
   font-size:18px;
   margin-bottom:24px;
 }
-.hero ul{
-  margin-bottom:30px;
-}
-.hero li{
-  margin-bottom:10px;
-}
 .hero img{
   width:100%;
   border-radius:16px;
   box-shadow:0 25px 60px rgba(0,0,0,.18);
 }
 
-/* CTA */
-.cta{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
+/* BOTONES */
 .btn{
   padding:14px 26px;
   border-radius:10px;
@@ -96,36 +79,28 @@ nav a:hover{opacity:1}
   background:var(--azul);
   color:#fff;
 }
-.btn-secondary{
-  border:2px solid var(--azul);
-  color:var(--azul);
-}
 
 /* SECCIONES */
 section{padding:80px 0}
 h2{
   font-size:32px;
   color:var(--azul);
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
-/* INCLUYE */
-.includes{
-  background:#fff;
-}
-.cards{
+/* BENEFICIOS */
+.benefits{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:32px;
   margin-top:40px;
 }
-.card{
+.benefit{
   background:#fff;
-  padding:32px;
-  border-radius:14px;
+  padding:28px;
+  border-radius:16px;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
-.card h3{color:var(--azul2);margin-bottom:12px}
 
 /* ACCESO */
 .access{
@@ -134,11 +109,9 @@ h2{
 }
 .access input{
   padding:14px;
-  width:280px;
-  max-width:100%;
+  width:260px;
   border-radius:8px;
   border:1px solid #cbd5e1;
-  margin-right:10px;
 }
 .access button{
   padding:14px 22px;
@@ -150,30 +123,46 @@ h2{
   cursor:pointer;
 }
 
-/* ZONA PREMIUM */
-#premium{
-  display:none;
-  padding-top:60px;
-}
-.premium-box{
+/* DASHBOARD COMPRADOR */
+#dashboard{display:none;padding-top:60px}
+
+.dashboard-box{
   background:#fff;
   padding:40px;
-  border-radius:16px;
-  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  border-radius:20px;
+  box-shadow:0 25px 60px rgba(0,0,0,.15);
 }
-.tool{
-  margin-top:40px;
+
+.downloads{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  margin-top:30px;
+}
+
+.download{
+  background:var(--fondo);
   padding:24px;
-  border:1px solid #e5e7eb;
-  border-radius:12px;
+  border-radius:14px;
+  text-align:center;
 }
-.tool textarea{
+
+/* MINI APP */
+.app{
+  margin-top:50px;
+}
+textarea,select{
   width:100%;
-  height:120px;
   padding:14px;
-  margin-top:12px;
-  border-radius:8px;
+  border-radius:10px;
   border:1px solid #cbd5e1;
+  margin-top:10px;
+}
+.result{
+  background:var(--fondo);
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
 }
 
 /* FOOTER */
@@ -187,7 +176,6 @@ footer{
 
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr}
-  nav{display:none}
 }
 </style>
 </head>
@@ -200,83 +188,86 @@ footer{
       <img src="logo-sistema-praxis.png">
       <span>SISTEMA PRAXIS</span>
     </div>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="el-sistema.html">El Sistema</a>
-      <a href="#">Contacto</a>
-    </nav>
   </div>
 </header>
 
+<!-- HERO VENTA -->
 <section class="hero">
   <div class="container hero-grid">
     <div>
       <h1>Ebook 1 · Claridad</h1>
       <p>
-        Deja de tomar decisiones agotado.  
-        Praxis Claridad es una herramienta práctica para reducir ruido mental
-        y saber exactamente qué merece tu energía hoy.
+        Reduce ruido mental, decide mejor y enfoca tu energía
+        con un sistema simple y aplicable en minutos.
       </p>
-      <ul>
-        <li>✔ Menos saturación mental</li>
-        <li>✔ Decisiones más simples y firmes</li>
-        <li>✔ Enfoque aplicable desde el primer día</li>
-      </ul>
-      <div class="cta">
-        <a href="https://TU-LINK-DE-PAGO.com" class="btn btn-primary">Comprar ahora</a>
-        <a href="#acceso" class="btn btn-secondary">Ya tengo acceso</a>
-      </div>
+      <a href="https://TU-LINK-DE-PAGO.com" class="btn btn-primary">Comprar ahora</a>
     </div>
-    <img src="ebook1.png" alt="Ebook Claridad">
+    <img src="ebook1.png">
   </div>
 </section>
 
-<section class="includes">
+<!-- BENEFICIOS -->
+<section>
   <div class="container">
-    <h2>¿Qué incluye tu acceso?</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Ebook Claridad</h3>
-        <p>Marco mental práctico para reducir ruido y definir foco.</p>
-      </div>
-      <div class="card">
-        <h3>Matriz Praxis</h3>
-        <p>Herramienta aplicada para tomar decisiones sin fricción.</p>
-      </div>
-      <div class="card">
-        <h3>Plantilla Excel</h3>
-        <p>Formato editable para aplicar el sistema en tu día real.</p>
-      </div>
+    <h2>Qué incluye</h2>
+    <div class="benefits">
+      <div class="benefit">📘 Ebook práctico y directo</div>
+      <div class="benefit">📊 Plantilla Excel Praxis</div>
+      <div class="benefit">🧠 Mini App interactiva</div>
+      <div class="benefit">♻️ Sistema reutilizable</div>
     </div>
   </div>
 </section>
 
-<section class="access" id="acceso">
+<!-- ACCESO COMPRADOR -->
+<section class="access">
   <div class="container">
-    <h2>Acceso al contenido</h2>
-    <p>Ingresa la clave que recibiste al comprar</p>
-    <br>
-    <input type="password" id="key" placeholder="Clave de acceso">
+    <h2>¿Ya compraste?</h2>
+    <p>Ingresa tu código de acceso</p><br>
+    <input type="password" id="key">
     <button onclick="unlock()">Ingresar</button>
 
-    <div id="premium">
-      <div class="premium-box">
-        <h2>Zona Praxis · Claridad</h2>
-        <p>Bienvenido. Aquí comienza la aplicación real del sistema.</p>
+    <!-- DASHBOARD -->
+    <div id="dashboard">
+      <div class="dashboard-box">
 
-        <div class="tool">
-          <h3>Mini-App · Matriz de Claridad</h3>
-          <p>Escribe todo lo que ocupa tu mente. Luego reduce a una sola prioridad.</p>
-          <textarea placeholder="Escribe aquí tus pendientes, ideas o preocupaciones…"></textarea>
+        <h2>Panel del comprador</h2>
+
+        <div class="downloads">
+          <div class="download">
+            <h3>📘 Ebook</h3>
+            <a href="ebook1.pdf" class="btn btn-primary">Descargar PDF</a>
+          </div>
+
+          <div class="download">
+            <h3>📊 Plantilla Praxis</h3>
+            <a href="plantilla-praxis.xlsx" class="btn btn-primary">Descargar Excel</a>
+          </div>
         </div>
 
-        <div class="tool">
-          <h3>Descargas</h3>
-          <p>
-            <a href="plantilla-praxis.xlsx">📊 Descargar plantilla Excel</a><br><br>
-            <a href="ebook-claridad.pdf">📘 Descargar ebook</a>
-          </p>
+        <!-- MINI APP -->
+        <div class="app">
+          <h2>Matriz Praxis · Claridad</h2>
+
+          <textarea id="ideas" placeholder="Escribe todo lo que hoy te genera ruido mental..."></textarea>
+
+          <select id="impacto">
+            <option value="1">Impacto bajo</option>
+            <option value="2">Impacto medio</option>
+            <option value="3">Impacto alto</option>
+          </select>
+
+          <select id="energia">
+            <option value="3">Energía alta</option>
+            <option value="2">Energía media</option>
+            <option value="1">Energía baja</option>
+          </select>
+
+          <button class="btn btn-primary" onclick="calcular()">Evaluar prioridad</button>
+
+          <div class="result" id="resultado"></div>
         </div>
+
       </div>
     </div>
 
@@ -289,23 +280,34 @@ footer{
 
 <script>
 function unlock(){
-  const validKeys=[
-    "PRAXIS-CLARIDAD-01",
-    "PRAXIS-CLARIDAD-02",
-    "PRAXIS-TEST-2026"
-  ];
-  const input=document.getElementById("key").value.trim();
-  if(validKeys.includes(input)){
-    document.getElementById("premium").style.display="block";
+  const keys=["PRAXIS-CLARIDAD-01","PRAXIS-DEMO"];
+  const input=document.getElementById("key").value;
+  if(keys.includes(input)){
+    document.getElementById("dashboard").style.display="block";
     alert("Acceso concedido");
   }else{
-    alert("Clave incorrecta");
+    alert("Código inválido");
   }
+}
+
+function calcular(){
+  const impacto=parseInt(document.getElementById("impacto").value);
+  const energia=parseInt(document.getElementById("energia").value);
+  const score=impacto*2-energia;
+
+  let msg="";
+  if(score>=4) msg="🔥 Prioridad absoluta. Hazla hoy.";
+  else if(score>=2) msg="✔ Acción relevante. Prográmala.";
+  else msg="❌ Ruido mental. No merece energía ahora.";
+
+  document.getElementById("resultado").innerHTML=msg;
 }
 </script>
 
 </body>
 </html>
+
+
 
 
 
