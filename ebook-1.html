@@ -96,6 +96,10 @@ input{
 
 .hidden{display:none}
 
+.logo img{
+  height:64px;
+}  
+  
 .tools a{
   display:block;
   margin-top:14px;
@@ -109,13 +113,16 @@ input{
 <body>
 
 <header>
-<nav>
-  <strong>SISTEMA PRAXIS</strong>
-  <div>
-    <a href="index.html">Inicio</a>
-    <a href="el-sistema.html">El Sistema</a>
+  <div class="container header-content">
+    <div class="logo">
+      <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
+      <span> </span>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="el-sistema.html">El Sistema</a>
+    </nav>
   </div>
-</nav>
 </header>
 
 <div class="container">
@@ -174,6 +181,7 @@ function validar(){
 
 </body>
 </html>
+
 
 
 
