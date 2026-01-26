@@ -2,191 +2,216 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Ebook 1 · Claridad | Sistema Praxis</title>
+<title>Ebook 1 | Método PRAXIS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --azul:#0d3b66;
-  --azul2:#1f6fae;
-  --claro:#eaf3fb;
-  --gris:#2e2e2e;
+  --primary:#0b3c5d;
+  --secondary:#1c7293;
+  --accent:#f4d35e;
+  --dark:#0a0a0a;
+  --light:#f5f7fa;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
 
 body{
-  font-family:Inter,sans-serif;
-  background:#fff;
-  color:var(--gris);
-  line-height:1.65;
+  background:linear-gradient(180deg,#f5f7fa,#e9eef3);
+  color:#222;
 }
 
-.container{
+/* ===== HEADER ===== */
+header{
+  background:#fff;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.nav{
   max-width:1200px;
   margin:auto;
-  padding:0 24px;
-}
-
-/* HEADER */
-header{
-  background:linear-gradient(135deg,var(--azul),var(--azul2));
-  color:#fff;
-  padding:28px 0;
-}
-
-.header-content{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:15px;
 }
-
-.logo{
+.nav img{
+  height:45px;
+}
+.nav ul{
+  list-style:none;
   display:flex;
-  align-items:center;
-  gap:14px;
+  gap:20px;
 }
-
-.logo img{height:64px}
-.logo span{font-size:22px;font-weight:700}
-
-nav a{
-  color:white;
-  margin-left:24px;
+.nav a{
   text-decoration:none;
-  opacity:.9;
+  color:#333;
+  font-weight:600;
 }
+.nav a:hover{color:var(--secondary)}
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
-  background:var(--claro);
-  padding:90px 0 70px;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:44px;
-  color:var(--azul);
-  margin-bottom:22px;
-}
-
-.hero p{
-  font-size:18px;
-  max-width:760px;
-  margin:auto;
-}
-
-/* PRODUCTO */
-section{padding:80px 0}
-
-.product-grid{
+  max-width:1200px;
+  margin:60px auto;
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:48px;
-  align-items:center;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+  padding:0 20px;
+  animation:fadeUp .8s ease;
 }
-
-.product-box{
-  background:#fff;
-  padding:40px;
-  border-radius:16px;
-  box-shadow:0 20px 45px rgba(0,0,0,.1);
+.hero h1{
+  font-size:42px;
+  color:var(--primary);
 }
-
+.hero p{
+  margin:20px 0;
+  font-size:18px;
+  line-height:1.6;
+}
 .price{
-  font-size:32px;
-  font-weight:700;
-  color:var(--azul);
-  margin:24px 0;
+  font-size:36px;
+  color:var(--secondary);
+  font-weight:800;
 }
-
 .btn{
   display:inline-block;
-  background:var(--azul2);
-  color:white;
-  padding:14px 28px;
-  border-radius:30px;
+  margin-top:25px;
+  padding:15px 30px;
+  background:linear-gradient(135deg,var(--secondary),var(--primary));
+  color:#fff;
+  border-radius:40px;
   text-decoration:none;
-  font-weight:600;
+  font-weight:700;
+  transition:.3s;
 }
+.btn:hover{transform:scale(1.05)}
 
-/* ACCESO */
-.access-box{
-  margin-top:60px;
-  background:#f8fafc;
-  padding:40px;
-  border-radius:16px;
+/* ===== QUE OBTIENES ===== */
+.section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+.section h2{
+  font-size:32px;
   text-align:center;
+  margin-bottom:40px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.card{
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-8px);
+}
+.card h3{
+  margin-bottom:15px;
+  color:var(--primary);
 }
 
-.access-box input{
+/* ===== ACCESO ===== */
+.access{
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  max-width:700px;
+  margin:60px auto;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.1);
+}
+.access input{
   padding:14px;
-  width:280px;
-  max-width:100%;
-  border-radius:8px;
-  border:1px solid #cbd5e1;
-  margin-top:12px;
+  width:70%;
+  border-radius:30px;
+  border:1px solid #ccc;
+  margin-top:20px;
 }
-
-.access-box button{
-  margin-top:16px;
-  padding:12px 26px;
+.access button{
+  margin-top:20px;
+  padding:14px 30px;
   border:none;
   border-radius:30px;
-  background:var(--azul);
-  color:white;
-  font-weight:600;
+  background:var(--secondary);
+  color:#fff;
+  font-weight:700;
   cursor:pointer;
 }
 
-.error{
-  color:#b91c1c;
-  margin-top:14px;
+/* ===== AREA PROTEGIDA ===== */
+#protected{
   display:none;
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+.downloads{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-bottom:60px;
+}
+.download{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-/* CONTENIDO PRIVADO */
-.private-content{
-  display:none;
-  margin-top:60px;
-  animation:fade .6s ease;
+/* ===== MINI APP ===== */
+.miniapp{
+  background:linear-gradient(180deg,#fff,#f0f4f8);
+  border-radius:25px;
+  padding:40px;
+  box-shadow:0 25px 60px rgba(0,0,0,.12);
 }
-
-.private-card{
-  background:white;
-  padding:32px;
-  border-radius:14px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  margin-bottom:24px;
-}
-
-.final-quote{
-  background:linear-gradient(135deg,var(--azul2),var(--azul));
-  color:white;
-  text-align:center;
-  padding:70px 24px;
+.miniapp h3{
   font-size:26px;
+  margin-bottom:20px;
+  color:var(--primary);
+}
+.miniapp label{
   font-weight:600;
+  display:block;
+  margin-top:20px;
+}
+.miniapp input, .miniapp textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  margin-top:8px;
+}
+.result{
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  margin-top:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
+/* ===== FOOTER ===== */
 footer{
-  background:#0a2540;
-  color:#cfd8e3;
+  background:#0b3c5d;
+  color:#fff;
   text-align:center;
-  padding:26px;
-  font-size:14px;
+  padding:30px;
+  margin-top:80px;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(10px)}
-  to{opacity:1;transform:none}
-}
-
-@media(max-width:900px){
-  nav{display:none}
-  .product-grid{grid-template-columns:1fr}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
@@ -194,112 +219,121 @@ footer{
 <body>
 
 <header>
-  <div class="container header-content">
-    <div class="logo">
-      <img src="logo-sistema-praxis.png">
-      <span> </span>
-    </div>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="el-sistema.html">El Sistema</a>
-    </nav>
+  <div class="nav">
+    <img src="logo.png" alt="Logo">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="elsistema.html">El Sistema</a></li>
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>Ebook 1 · Claridad</h1>
-    <p>
-      Reduce ruido mental, decide mejor y crea avance real incluso en días difíciles.
-    </p>
+  <div>
+    <h1>Método PRAXIS</h1>
+    <p>Claridad estratégica, toma de decisiones y ejecución real.  
+    No es solo un ebook: es un **sistema práctico con herramientas aplicables**.</p>
+    <div class="price">$10 USD</div>
+    <a class="btn" href="#acceso">Comprar ahora</a>
   </div>
+  <img src="ebook1.png" style="width:100%;border-radius:20px;">
 </section>
 
-<section>
-  <div class="container product-grid">
-
-    <div>
-      <h2>Qué obtienes</h2>
-      <p>
-        La base del Sistema Praxis.
-        No motivación. No productividad vacía.
-        Estructura para pensar mejor.
-      </p>
+<section class="section" id="beneficios">
+  <h2>¿Qué obtienes?</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>📘 Ebook Estratégico</h3>
+      <p>Contenido profundo, accionable y enfocado en claridad real.</p>
     </div>
-
-    <div class="product-box">
-      <h3>Incluye</h3>
-      <ul style="margin-left:18px">
-        <li>Ebook PDF</li>
-        <li>Plantilla Excel Praxis</li>
-        <li>Mini-app interactiva</li>
-      </ul>
-
-      <div class="price">$10 USD</div>
-      <a href="#" class="btn">Comprar ahora</a>
+    <div class="card">
+      <h3>📊 Plantilla Excel PRAXIS</h3>
+      <p>Modelo editable para organizar decisiones, prioridades y acciones.</p>
     </div>
-
-  </div>
-
-  <!-- ACCESO -->
-  <div class="container access-box">
-    <h2>¿Ya compraste?</h2>
-    <p>Ingresa tu código para desbloquear el contenido</p>
-
-    <input type="text" id="codeInput" placeholder="Código de acceso">
-    <br>
-    <button onclick="unlock()">Desbloquear</button>
-
-    <div class="error" id="errorMsg">Código inválido</div>
-
-    <!-- CONTENIDO PRIVADO -->
-    <div class="private-content" id="privateContent">
-
-      <div class="private-card">
-        <h3>📘 Descargar Ebook</h3>
-        <a href="ebook-claridad.pdf" class="btn">Descargar PDF</a>
-      </div>
-
-      <div class="private-card">
-        <h3>📊 Plantilla Praxis</h3>
-        <a href="plantilla-praxis.xlsx" class="btn">Descargar Excel</a>
-      </div>
-
-      <div class="private-card">
-        <h3>🧠 Mini-App Claridad</h3>
-        <a href="miniapp-claridad.html" class="btn">Abrir aplicación</a>
-      </div>
-
+    <div class="card">
+      <h3>⚙ Mini-App Interactiva</h3>
+      <p>Convierte reflexión en resultados medibles y guardables.</p>
     </div>
   </div>
 </section>
 
-<section class="final-quote">
-  “No necesitas más disciplina. Necesitas un sistema que piense contigo.”
+<section class="access" id="acceso">
+  <h2>Acceso al contenido</h2>
+  <p>Introduce tu código de acceso para desbloquear el paquete completo</p>
+  <input type="text" id="code" placeholder="Código de acceso">
+  <br>
+  <button onclick="unlock()">Acceder</button>
+</section>
+
+<section id="protected">
+  <h2>Contenido desbloqueado</h2>
+
+  <div class="downloads">
+    <div class="download">
+      <h3>📘 Descargar Ebook</h3>
+      <a class="btn" href="ebook1.pdf" download>Descargar</a>
+    </div>
+    <div class="download">
+      <h3>📊 Plantilla Excel</h3>
+      <a class="btn" href="plantilla-praxis.xlsx" download>Descargar</a>
+    </div>
+  </div>
+
+  <div class="miniapp">
+    <h3>Mini-App PRAXIS</h3>
+
+    <label>Situación actual</label>
+    <textarea id="s1"></textarea>
+
+    <label>Objetivo deseado</label>
+    <textarea id="s2"></textarea>
+
+    <label>Bloqueo principal</label>
+    <textarea id="s3"></textarea>
+
+    <label>Acción inmediata</label>
+    <textarea id="s4"></textarea>
+
+    <button class="btn" onclick="generar()">Generar análisis</button>
+
+    <div class="result" id="resultado"></div>
+  </div>
 </section>
 
 <footer>
-  © 2026 Sistema Praxis · Claridad que genera avance
+  © 2026 – Método PRAXIS
 </footer>
 
 <script>
-function unlock(){
-  const code = document.getElementById("codeInput").value.trim();
-  const validCodes = [
-    "PRAXIS-DEMO-2026"
-  ];
+const UNIVERSAL = "PRAXIS-ACCESS-2026";
 
-  if(validCodes.includes(code)){
-    document.getElementById("privateContent").style.display = "block";
-    document.getElementById("errorMsg").style.display = "none";
+function unlock(){
+  const code = document.getElementById("code").value.trim();
+  if(code === UNIVERSAL){
+    document.getElementById("protected").style.display="block";
+    alert("Acceso concedido");
   }else{
-    document.getElementById("errorMsg").style.display = "block";
+    alert("Código incorrecto");
   }
+}
+
+function generar(){
+  const r = `
+  <strong>Diagnóstico:</strong><br>
+  Situación: ${s1.value}<br><br>
+  Objetivo: ${s2.value}<br><br>
+  Bloqueo: ${s3.value}<br><br>
+  Acción recomendada: ${s4.value}
+  `;
+  resultado.innerHTML = r;
 }
 </script>
 
 </body>
 </html>
+
 
 
 
