@@ -7,11 +7,11 @@
 
 <style>
 :root{
-  --primary:#0b3c5d;
-  --secondary:#1c7293;
+  --azul-principal:#0d3b66;
+  --azul-secundario:#1f6fae;
+  --azul-claro:#eaf3fb;
+  --gris-texto:#2e2e2e;
   --accent:#f4d35e;
-  --dark:#0a0a0a;
-  --light:#f5f7fa;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
@@ -23,52 +23,56 @@ body{
 
 /* ===== HEADER (CORREGIDO) ===== */
 header{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  box-shadow:0 6px 30px rgba(0,0,0,.18);
+  background:linear-gradient(135deg,var(--azul-principal),var(--azul-secundario));
+  color:#fff;
+  padding:28px 0;
   position:sticky;
   top:0;
   z-index:100;
 }
+
 .nav{
   max-width:1200px;
   margin:auto;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:15px 20px;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  justify-content:space-between;
+  padding:0 24px;
 }
 
-.logo img {
-  height: 84px;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
-.logo span {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: white;
+.logo img{
+  height:84px;
 }
+
+.logo span{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:.5px;
+  color:#fff;
+}
+
 .nav ul{
   list-style:none;
   display:flex;
-  gap:22px;
-}
-.nav a{
-  text-decoration:none;
-  color:#fff;
-  font-weight:600;
-  opacity:.95;
-}
-.nav a:hover{
-  opacity:1;
-  color:var(--accent);
+  gap:24px;
 }
 
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  opacity:.9;
+}
+
+.nav a:hover{
+  opacity:1;
+  text-decoration:underline;
 /* ===== HERO ===== */
 .hero{
   max-width:1200px;
@@ -319,6 +323,7 @@ function unlock(){
 
 </body>
 </html>
+
 
 
 
