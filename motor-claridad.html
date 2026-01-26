@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Motor de Claridad Praxis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --azul:#0d3b66;
+  --azul-sec:#1f6fae;
+  --fondo:#f1f5f9;
+  --panel:#ffffff;
+  --texto:#1f2937;
+  --muted:#475569;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--fondo);
+  color:var(--texto);
+  line-height:1.65;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:60px 24px;
+}
+
+h1{
+  font-size:2.4rem;
+  color:var(--azul);
+  margin-bottom:12px;
+}
+
+h2{
+  font-size:1.6rem;
+  margin-bottom:10px;
+  color:var(--azul-sec);
+}
+
+p{color:var(--muted)}
+
+.panel{
+  background:var(--panel);
+  padding:36px;
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+  margin-bottom:40px;
+}
+
+textarea{
+  width:100%;
+  min-height:100px;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #cbd5e1;
+  font-family:Inter;
+  font-size:15px;
+  resize:vertical;
+}
+
+label{
+  font-weight:600;
+  display:block;
+  margin:22px 0 8px;
+}
+
+select{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #cbd5e1;
+}
+
+button{
+  background:linear-gradient(135deg,var(--azul-sec),var(--azul));
+  color:#fff;
+  border:none;
+  padding:16px 28px;
+  font-size:16px;
+  border-radius:999px;
+  cursor:pointer;
+  margin-top:28px;
+}
+
+button:hover{opacity:.95}
+
+.result{
+  display:none;
+}
+
+.result-box{
+  background:#f8fafc;
+  padding:24px;
+  border-left:5px solid var(--azul-sec);
+  margin-top:20px;
+}
+
+.actions{
+  display:flex;
+  gap:16px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.actions button{
+  background:#020617;
+}
+
+@media print{
+  button,.actions{display:none}
+  body{background:#fff}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Motor de Claridad Praxis™</h1>
+  <p>
+    Esta herramienta no organiza tareas.  
+    Reduce ruido mental y te devuelve claridad operativa.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="panel">
+    <h2>1. Identifica el ruido</h2>
+
+    <label>¿Qué está ocupando tu mente ahora mismo?</label>
+    <textarea id="ruido" placeholder="Escribe todo lo que te genera presión, confusión o saturación..."></textarea>
+
+    <label>¿Este pensamiento es…?</label>
+    <select id="tipo">
+      <option value="no-control">Algo que no puedo resolver hoy</option>
+      <option value="posponible">Algo que puede esperar sin costo</option>
+      <option value="accionable">Algo accionable hoy</option>
+    </select>
+
+    <label>¿Qué te genera principalmente?</label>
+    <select id="impacto">
+      <option value="ansiedad">Ansiedad / ruido mental</option>
+      <option value="culpa">Culpa por no avanzar</option>
+      <option value="presion">Presión externa</option>
+      <option value="confusion">Confusión</option>
+    </select>
+
+    <button onclick="procesar()">Procesar claridad</button>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="panel result" id="resultado">
+    <h2>Resultado Praxis</h2>
+
+    <div class="result-box" id="textoResultado"></div>
+
+    <div class="actions">
+      <button onclick="window.print()">Imprimir</button>
+      <button onclick="guardar()">Guardar resultado</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function procesar(){
+  const tipo=document.getElementById("tipo").value;
+  const impacto=document.getElementById("impacto").value;
+
+  let decision="";
+  let ignorar="";
+
+  if(tipo==="no-control"){
+    ignorar="Esto no depende de ti hoy. Pensarlo ahora solo aumenta desgaste.";
+    decision="No actuar. Liberar espacio mental conscientemente.";
+  }
+  if(tipo==="posponible"){
+    ignorar="Esto puede esperar sin consecuencias reales.";
+    decision="Postergar con intención clara.";
+  }
+  if(tipo==="accionable"){
+    ignorar="Todo lo demás no requiere atención hoy.";
+    decision="Ejecutar una sola acción mínima.";
+  }
+
+  const texto=`
+  <strong>Declaración de claridad:</strong><br><br>
+  Hoy dejo de cargar con lo que no puedo controlar,
+  acepto lo que puede esperar,
+  y enfoco mi energía únicamente en lo que reduce ruido mental.<br><br>
+  <em>${decision}</em><br><br>
+  <small>${ignorar}</small>
+  `;
+
+  document.getElementById("textoResultado").innerHTML=texto;
+  document.getElementById("resultado").style.display="block";
+}
+
+function guardar(){
+  const contenido=document.getElementById("textoResultado").innerText;
+  const blob=new Blob([contenido],{type:"text/plain"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="claridad-praxis.txt";
+  a.click();
+}
+</script>
+
+</body>
+</html>
