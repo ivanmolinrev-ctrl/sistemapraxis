@@ -1,263 +1,265 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Ebook 1 · Sistema Praxis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ebook 1 | Sistema Praxis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #020617;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
+<style>
+:root{
+  --brand:#1e3a8a;
+  --accent:#0ea5e9;
+  --ink:#0f172a;
+  --muted:#475569;
+  --bg:#f1f5f9;
+  --panel:#ffffff;
+}
 
-    a {
-      text-decoration: none;
-    }
+*{box-sizing:border-box}
 
-    header {
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+}
 
-    header .logo {
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #f8fafc;
-    }
+/* HEADER */
+header{
+  background:linear-gradient(90deg,var(--brand),#1d4ed8);
+  color:#fff;
+}
 
-    header nav a {
-      margin-left: 1.5rem;
-      color: #cbd5f5;
-      font-size: 0.9rem;
-    }
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:26px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 4rem 2rem;
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  font-size:1.25rem;
+  font-weight:600;
+}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem;
-      align-items: center;
-      margin-bottom: 6rem;
-    }
+.brand img{height:64px}
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #f8fafc;
-    }
+nav a{
+  color:#e0e7ff;
+  text-decoration:none;
+  margin-left:28px;
+}
 
-    .hero p {
-      font-size: 1.1rem;
-      color: #cbd5f5;
-      margin-bottom: 2rem;
-    }
+nav a:hover{color:#fff}
 
-    .hero img {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-    }
+/* HERO */
+.hero{
+  max-width:1200px;
+  margin:auto;
+  padding:110px 40px 90px;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:80px;
+  align-items:center;
+}
 
-    .cta {
-      display: inline-block;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #020617;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      font-weight: 600;
-    }
+.hero h1{
+  font-size:3.2rem;
+  line-height:1.15;
+  margin-bottom:20px;
+}
 
-    /* TOOL SECTION */
-    .tool-section {
-      background: linear-gradient(135deg, #0f172a, #020617);
-      padding: 5rem 2rem;
-      margin-top: 6rem;
-      border-radius: 24px;
-    }
+.hero p{
+  font-size:1.1rem;
+  color:var(--muted);
+  margin-bottom:32px;
+}
 
-    .tool-container {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem;
-      align-items: center;
-    }
+.cta{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:16px 34px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  font-size:1.05rem;
+}
 
-    .tool-badge {
-      display: inline-block;
-      background: rgba(56,189,248,0.15);
-      color: #38bdf8;
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      margin-bottom: 1rem;
-    }
+.cta:hover{opacity:.9}
 
-    .tool-container h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-    }
+.hero img{
+  width:100%;
+  border-radius:14px;
+}
 
-    .tool-list {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
+/* SECTIONS */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:90px 40px;
+}
 
-    .tool-list li {
-      margin-bottom: 0.6rem;
-    }
+.section h2{
+  font-size:2.2rem;
+  margin-bottom:16px;
+}
 
-    .locked {
-      background: rgba(255,255,255,0.05);
-      padding: 2rem;
-      border-radius: 16px;
-    }
+.section p{color:var(--muted)}
 
-    .locked input {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 1rem;
-    }
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  margin-top:50px;
+}
 
-    .locked button {
-      width: 100%;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 8px;
-      background: #38bdf8;
-      font-weight: 600;
-      cursor: pointer;
-    }
+.feature{
+  background:var(--panel);
+  padding:36px;
+  border-top:5px solid var(--accent);
+}
 
-    .download {
-      display: none;
-      margin-top: 2rem;
-    }
+.feature h3{
+  margin-bottom:10px;
+}
 
-    .download a {
-      display: inline-block;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #020617;
-      padding: 0.9rem 1.6rem;
-      border-radius: 10px;
-      font-weight: 600;
-    }
+/* FINAL CTA */
+.final{
+  background:#020617;
+  color:#e5e7eb;
+  text-align:center;
+  padding:90px 30px;
+}
 
-    footer {
-      margin-top: 6rem;
-      padding: 3rem 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-  </style>
+.final h2{
+  font-size:2.4rem;
+  margin-bottom:20px;
+}
+
+.final p{
+  color:#94a3b8;
+  margin-bottom:34px;
+}
+
+/* QUOTE */
+.final-quote{
+  font-style:italic;
+  font-size:1.1rem;
+  color:#cbd5f5;
+  margin-top:40px;
+}
+
+/* FOOTER */
+footer{
+  background:#020617;
+  color:#94a3b8;
+  padding:24px;
+  text-align:center;
+  font-size:.85rem;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">PRAXIS</div>
-  <nav>
+<nav>
+  <div class="brand">
+    <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
+    Sistema Praxis
+  </div>
+  <div>
     <a href="index.html">Inicio</a>
     <a href="el-sistema.html">El Sistema</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+    <a href="#">Contacto</a>
+  </div>
+</nav>
 </header>
 
-<main>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Piensa mejor.<br>Decide con claridad.<br>Avanza sin fricción.</h1>
+    <p>
+      Ebook 1 del Sistema Praxis es una guía práctica para personas
+      que piensan demasiado, se saturan fácil y necesitan un sistema
+      que ordene decisiones sin depender de motivación.
+    </p>
+    <a href="#" class="cta">Comprar Ebook + Herramientas</a>
+  </div>
 
-  <section class="hero">
-    <div>
-      <h1>Ebook 1: Claridad antes que disciplina</h1>
-      <p>
-        No necesitas motivación infinita.
-        Necesitas un sistema que piense contigo cuando tú estás cansado.
-      </p>
-      <a href="#herramienta" class="cta">Ver herramienta incluida</a>
+  <img src="ebook1.png" alt="Ebook Sistema Praxis">
+</section>
+
+<!-- VALUE -->
+<section class="section">
+  <h2>Este ebook es para ti si…</h2>
+  <p>No necesitas más disciplina. Necesitas un sistema que reduzca ruido mental.</p>
+
+  <div class="features">
+    <div class="feature">
+      <h3>Te sientes saturado</h3>
+      <p>Muchas ideas, pocas decisiones claras y cansancio mental constante.</p>
     </div>
 
-    <img src="ebook1.png" alt="Ebook Sistema Praxis">
-  </section>
-
-  <section id="herramienta" class="tool-section">
-    <div class="tool-container">
-
-      <div>
-        <span class="tool-badge">HERRAMIENTA INCLUIDA</span>
-        <h2>Matriz Praxis</h2>
-
-        <ul class="tool-list">
-          <li>✔ Reduce ruido mental</li>
-          <li>✔ Ordena prioridades</li>
-          <li>✔ Convierte ideas en acciones</li>
-          <li>✔ Apta para trabajo y vida personal</li>
-        </ul>
-
-        <div class="locked" id="lockBox">
-          <p><strong>Acceso exclusivo para compradores</strong></p>
-          <input type="text" id="accessKey" placeholder="Ingresa tu clave de acceso">
-          <button onclick="unlock()">Desbloquear herramienta</button>
-        </div>
-
-        <div class="download" id="downloadBox">
-          <p>Acceso concedido ✔</p>
-          <a href="plantilla-praxis.xlsx" download>
-            Descargar Matriz Praxis
-          </a>
-        </div>
-      </div>
-
-      <img src="ebook1.png" alt="Matriz Praxis visual">
+    <div class="feature">
+      <h3>Quieres foco real</h3>
+      <p>No más listas infinitas. Una sola prioridad bien elegida.</p>
     </div>
-  </section>
 
-</main>
+    <div class="feature">
+      <h3>Buscas un sistema</h3>
+      <p>No motivación pasajera, sino una estructura que piense contigo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT INCLUDES -->
+<section class="section">
+  <h2>¿Qué incluye?</h2>
+
+  <div class="features">
+    <div class="feature">
+      <h3>Ebook Praxis</h3>
+      <p>Marco mental claro para decidir mejor bajo presión.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Matriz Praxis</h3>
+      <p>Herramienta práctica para convertir confusión en acción.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Acceso al sistema</h3>
+      <p>Entrada al mini entorno privado del Sistema Praxis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Claridad no es hacer más.<br>Es decidir mejor.</h2>
+  <p>Empieza hoy con el Sistema Praxis.</p>
+  <a href="#" class="cta">Acceder al Ebook</a>
+
+  <div class="final-quote">
+    “No necesitas más disciplina. Necesitas un sistema que piense contigo.”
+  </div>
+</section>
 
 <footer>
-  <section class="final-quote">
-    “No necesitas más disciplina. Necesitas un sistema que piense contigo.”
-  </section>
-  <p>© 2026 Sistema Praxis · Claridad que genera avance</p>
+© 2026 Sistema Praxis · Claridad que genera avance
 </footer>
-
-<script>
-  const VALID_KEY = "PRAXIS-2026";
-
-  function unlock() {
-    const input = document.getElementById("accessKey").value;
-
-    if (input === VALID_KEY) {
-      localStorage.setItem("praxis_access", "true");
-      showDownload();
-    } else {
-      alert("Clave incorrecta");
-    }
-  }
-
-  function showDownload() {
-    document.getElementById("lockBox").style.display = "none";
-    document.getElementById("downloadBox").style.display = "block";
-  }
-
-  if (localStorage.getItem("praxis_access") === "true") {
-    showDownload();
-  }
-</script>
 
 </body>
 </html>
+
