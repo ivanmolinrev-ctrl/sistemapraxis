@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mini App · Claridad | Sistema Praxis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --azul:#0d3b66;
+  --azul2:#1f6fae;
+  --acento:#2563eb;
+  --bg:#f1f5f9;
+  --card:#ffffff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Inter,system-ui;
+  background:linear-gradient(180deg,#ffffff,#f1f5f9);
+  color:#0f172a;
+  line-height:1.6;
+}
+
+/* CONTENEDOR */
+.app{
+  max-width:900px;
+  margin:80px auto;
+  padding:0 24px;
+}
+
+/* TARJETA */
+.card{
+  background:var(--card);
+  padding:48px;
+  border-radius:22px;
+  box-shadow:0 30px 70px rgba(0,0,0,.12);
+  animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+h1{
+  font-size:32px;
+  color:var(--azul);
+  margin-bottom:12px;
+}
+p{margin-bottom:24px;color:#475569}
+
+/* INPUT */
+textarea{
+  width:100%;
+  height:120px;
+  padding:16px;
+  border-radius:14px;
+  border:1px solid #cbd5e1;
+  font-size:16px;
+  resize:none;
+}
+
+/* BOTONES */
+button{
+  margin-top:24px;
+  padding:14px 28px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:transform .3s ease, box-shadow .3s ease;
+  box-shadow:0 15px 40px rgba(37,99,235,.35);
+}
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 25px 60px rgba(37,99,235,.45);
+}
+
+/* MATRIZ */
+.item{
+  margin-top:28px;
+  padding:24px;
+  border-radius:16px;
+  background:#f8fafc;
+}
+label{
+  display:block;
+  margin:10px 0 4px;
+  font-weight:600;
+}
+input[type=range]{
+  width:100%;
+}
+
+/* RESULTADO */
+.result{
+  margin-top:36px;
+  padding:28px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#020617,#020617);
+  color:#e5e7eb;
+  font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+  <div class="card" id="step1">
+    <h1>Escáner mental</h1>
+    <p>Escribe TODO lo que ocupa espacio en tu cabeza ahora mismo. Sin filtrar.</p>
+    <textarea id="brainDump" placeholder="Ej: pendientes, ideas, problemas, tareas…"></textarea>
+    <button onclick="goStep2()">Continuar</button>
+  </div>
+
+  <div class="card" id="step2" style="display:none">
+    <h1>Matriz de Claridad</h1>
+    <p>Evalúa cada elemento según impacto y energía requerida.</p>
+    <div id="matrix"></div>
+    <button onclick="analyze()">Analizar</button>
+  </div>
+
+  <div class="card" id="step3" style="display:none">
+    <h1>Resultado Praxis</h1>
+    <p>Esta es la acción que más claridad genera ahora.</p>
+    <div class="result" id="result"></div>
+  </div>
+</div>
+
+<script>
+let items = [];
+
+function goStep2(){
+  const text = document.getElementById("brainDump").value.trim();
+  if(!text) return alert("Escribe al menos una idea");
+  items = text.split(",").map(i=>i.trim());
+  document.getElementById("step1").style.display="none";
+  document.getElementById("step2").style.display="block";
+
+  const matrix = document.getElementById("matrix");
+  matrix.innerHTML="";
+  items.forEach((item,i)=>{
+    matrix.innerHTML += `
+      <div class="item">
+        <strong>${item}</strong>
+        <label>Impacto</label>
+        <input type="range" min="1" max="5" value="3" id="impact${i}">
+        <label>Energía requerida</label>
+        <input type="range" min="1" max="5" value="3" id="energy${i}">
+      </div>`;
+  });
+}
+
+function analyze(){
+  let best = {score:-Infinity,text:""};
+  items.forEach((item,i)=>{
+    const impact = +document.getElementById("impact"+i).value;
+    const energy = +document.getElementById("energy"+i).value;
+    const score = impact - energy;
+    if(score > best.score){
+      best = {score,text:item};
+    }
+  });
+
+  document.getElementById("step2").style.display="none";
+  document.getElementById("step3").style.display="block";
+  document.getElementById("result").innerHTML =
+    `👉 <strong>${best.text}</strong><br><br>
+     Esta acción genera más claridad con menor desgaste. 
+     Empieza por aquí.`;
+}
+</script>
+
+</body>
+</html>

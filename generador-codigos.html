@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Generador de Códigos | Sistema Praxis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family:Inter,system-ui;
+  background:#0f172a;
+  color:#e5e7eb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.box{
+  background:#020617;
+  padding:40px;
+  border-radius:18px;
+  width:380px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+h1{font-size:22px;margin-bottom:16px}
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.code{
+  margin-top:20px;
+  background:#020617;
+  padding:14px;
+  border-radius:10px;
+  text-align:center;
+  font-size:18px;
+  letter-spacing:2px;
+  border:1px dashed #334155;
+}
+small{opacity:.7}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Generador de códigos Praxis</h1>
+  <small>Usa estos códigos para compradores</small>
+
+  <button onclick="generate()">Generar código</button>
+
+  <div class="code" id="code">— — — — —</div>
+</div>
+
+<script>
+function generate(){
+  const prefix="PRAXIS-CLARIDAD";
+  const random=Math.random().toString(36).substring(2,6).toUpperCase();
+  const date=new Date().getFullYear();
+  document.getElementById("code").innerText=
+    `${prefix}-${date}-${random}`;
+}
+</script>
+
+</body>
+</html>
