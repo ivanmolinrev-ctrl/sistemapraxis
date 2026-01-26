@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ebook 1 · Claridad | Sistema Praxis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul-principal: #0d3b66;
+            --azul-secundario: #1f6fae;
+            --azul-claro: #eaf3fb;
+            --gris-texto: #2e2e2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gris-texto);
+            background-color: #ffffff;
+            line-height: 1.65;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
+            color: white;
+            padding: 26px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo img {
+            height: 56px;
+        }
+
+        .logo span {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* HERO */
+        .hero {
+            background-color: var(--azul-claro);
+            padding: 90px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: var(--azul-principal);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 16px 32px;
+            background-color: var(--azul-secundario);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .cta:hover {
+            background-color: var(--azul-principal);
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 90px 0;
+        }
+
+        section h2 {
+            font-size: 32px;
+            color: var(--azul-principal);
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 17px;
+            max-width: 820px;
+        }
+
+        /* BENEFICIOS */
+        .benefits {
+            background-color: #f8fafc;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 32px;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .benefit-card h3 {
+            color: var(--azul-secundario);
+            margin-bottom: 12px;
+        }
+
+        /* PARA QUIÉN */
+        .who {
+            background-color: var(--azul-claro);
+        }
+
+        .who ul {
+            margin-top: 24px;
+            padding-left: 20px;
+        }
+
+        .who li {
+            margin-bottom: 14px;
+            font-size: 17px;
+        }
+
+        /* CTA FINAL */
+        .final-cta {
+            background: linear-gradient(135deg, var(--azul-secundario), var(--azul-principal));
+            color: white;
+            text-align: center;
+            padding: 90px 24px;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0a2540;
+            color: #cfd8e3;
+            text-align: center;
+            padding: 24px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">
+            <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
+            <span>SISTEMA PRAXIS</span>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="el-sistema.html">El Sistema</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <h1>Ebook 1 · Claridad</h1>
+            <p>
+                El primer paso del Sistema Praxis.
+                Diseñado para reducir ruido mental y definir qué merece tu energía cada día.
+            </p>
+            <p>
+                No más listas infinitas.  
+                No más avanzar sin rumbo.
+            </p>
+            <a href="#comprar" class="cta">Obtener Ebook</a>
+        </div>
+
+        <div>
+            <img src="ebook1.png" alt="Ebook Claridad Sistema Praxis">
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEMA -->
+<section>
+    <div class="container">
+        <h2>El problema no es falta de disciplina</h2>
+        <p>
+            La mayoría de las personas están cansadas, saturadas y tomando decisiones
+            sin un marco claro. Eso genera desgaste, no avance.
+        </p>
+        <p>
+            Este ebook existe para resolver ese punto exacto:
+            <strong>decidir mejor antes de hacer más</strong>.
+        </p>
+    </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="benefits">
+    <div class="container">
+        <h2>Qué cambia cuando tienes claridad</h2>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <h3>Menos ruido mental</h3>
+                <p>Dejas de cargar tareas irrelevantes todo el día.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Mejores decisiones</h3>
+                <p>Sabes qué sí hacer y qué no tocar.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Avance real</h3>
+                <p>Tu energía se dirige a lo que importa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="who">
+    <div class="container">
+        <h2>Este ebook es para ti si…</h2>
+        <ul>
+            <li>Sientes que haces mucho pero avanzas poco</li>
+            <li>Terminas el día cansado sin saber qué lograste</li>
+            <li>Quieres un sistema, no motivación pasajera</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta" id="comprar">
+    <h2>Empieza por la claridad</h2>
+    <p>
+        Este ebook es la puerta de entrada al Sistema Praxis.
+    </p>
+    <a href="#" class="cta">Comprar Ebook 1</a>
+</section>
+
+<footer>
+    © 2026 Sistema Praxis · Claridad que genera avance
+</footer>
+
+</body>
+</html>
