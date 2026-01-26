@@ -2,231 +2,103 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<title>Matriz Praxis</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matriz Praxis | Herramienta Exclusiva</title>
 
 <style>
-:root{
-  --primary:#0b3c5d;
-  --secondary:#328cc1;
-  --accent:#f4d35e;
-  --bg:#f8f9fa;
-}
-
 body{
+  font-family:Segoe UI, sans-serif;
+  background:#f5f7fa;
   margin:0;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background:var(--bg);
-  color:#333;
-}
-
-/* ====== CONTENEDORES ====== */
-.wrapper{
-  max-width:1100px;
-  margin:auto;
   padding:40px 20px;
 }
 
-.hidden{display:none;}
-
-/* ====== BLOQUEO ====== */
-.lock{
-  max-width:420px;
-  margin:120px auto;
+.box{
+  max-width:700px;
+  margin:auto;
   background:#fff;
   padding:40px;
-  border-radius:14px;
-  box-shadow:0 20px 40px rgba(0,0,0,.12);
-  text-align:center;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.1);
 }
 
-.lock h1{
-  margin-bottom:10px;
-  color:var(--primary);
-}
-
-.lock p{
-  font-size:14px;
-  color:#666;
-}
-
-.lock input{
+h1{color:#0b3c5d;}
+input{
   width:100%;
   padding:14px;
-  margin-top:20px;
-  border-radius:8px;
-  border:1px solid #ccc;
   font-size:16px;
-}
-
-.lock button{
-  margin-top:20px;
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:8px;
-  background:var(--secondary);
-  color:#fff;
-  font-size:16px;
-  cursor:pointer;
-}
-
-.lock button:hover{
-  background:var(--primary);
-}
-
-/* ====== APP ====== */
-.header{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.header h1{
-  color:var(--primary);
-}
-
-.matrix{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.card{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.card h3{
-  margin-top:0;
-  color:var(--secondary);
-}
-
-.card textarea{
-  width:100%;
-  min-height:120px;
-  border-radius:8px;
+  margin-top:10px;
+  border-radius:10px;
   border:1px solid #ccc;
-  padding:10px;
-  resize:vertical;
 }
 
-.actions{
-  margin-top:40px;
-  text-align:center;
-}
-
-.actions button{
+button{
+  margin-top:20px;
   padding:14px 24px;
+  background:#328cc1;
+  color:#fff;
   border:none;
   border-radius:10px;
-  background:var(--accent);
   font-size:16px;
   cursor:pointer;
 }
 
-.actions button:hover{
-  opacity:.85;
-}
-
-footer{
-  margin-top:60px;
-  text-align:center;
-  font-size:13px;
-  color:#777;
-}
+.hidden{display:none;}
 </style>
 </head>
 
 <body>
 
-<!-- ====== BLOQUEO ====== -->
-<div id="lockScreen" class="lock">
-  <h1>Acceso exclusivo</h1>
-  <p>Esta herramienta está disponible solo para compradores del Ebook 1.</p>
-  <input type="password" id="accessKey" placeholder="Introduce tu clave">
-  <button onclick="unlock()">Acceder a la herramienta</button>
-  <p id="error" style="color:red;display:none;">Clave incorrecta</p>
+<div class="box" id="lock">
+  <h1>🔒 Acceso restringido</h1>
+  <p>Ingresa tu clave de acceso para desbloquear la Matriz Praxis.</p>
+  <input type="text" id="key" placeholder="Clave de acceso">
+  <button onclick="unlock()">Desbloquear</button>
+  <p id="error" style="color:red;"></p>
 </div>
 
-<!-- ====== APP ====== -->
-<div id="app" class="wrapper hidden">
+<div class="box hidden" id="app">
+  <h1>🧠 Matriz Praxis</h1>
+  <p>Transforma cualquier problema en una acción concreta.</p>
 
-  <div class="header">
-    <h1>Matriz Praxis</h1>
-    <p>Convierte ideas en decisiones claras y accionables</p>
-  </div>
+  <label>Situación actual</label>
+  <input type="text">
 
-  <div class="card">
-    <h3>1. Problema central</h3>
-    <textarea id="problema" placeholder="Describe el problema o desafío principal..."></textarea>
-  </div>
+  <label>Qué depende de ti</label>
+  <input type="text">
 
-  <div class="matrix" style="margin-top:30px;">
-    <div class="card">
-      <h3>2. Qué está pasando</h3>
-      <textarea id="actual"></textarea>
-    </div>
-    <div class="card">
-      <h3>3. Qué debería pasar</h3>
-      <textarea id="ideal"></textarea>
-    </div>
-    <div class="card">
-      <h3>4. Qué depende de mí</h3>
-      <textarea id="control"></textarea>
-    </div>
-    <div class="card">
-      <h3>5. Próxima acción concreta</h3>
-      <textarea id="accion"></textarea>
-    </div>
-  </div>
+  <label>Primera acción concreta</label>
+  <input type="text">
 
-  <div class="actions">
-    <button onclick="exportar()">Copiar resultados</button>
-  </div>
-
-  <footer>
-    Herramienta incluida en Ebook 1 · Uso personal
-  </footer>
-
+  <p style="margin-top:20px;">
+    <a href="plantilla-praxis.xlsx">Descargar plantilla</a>
+  </p>
 </div>
 
 <script>
-// ====== CONFIGURACIÓN ======
-const CLAVE_CORRECTA = "PRAXIS-2026"; // cambia esta clave cuando quieras
+const ACCESS_KEY = "PRAXIS-2026";
 
 function unlock(){
-  const input = document.getElementById("accessKey").value;
-  if(input === CLAVE_CORRECTA){
-    document.getElementById("lockScreen").style.display="none";
-    document.getElementById("app").classList.remove("hidden");
+  const key = document.getElementById("key").value;
+  if(key === ACCESS_KEY){
+    localStorage.setItem("praxis_access","true");
+    showApp();
   }else{
-    document.getElementById("error").style.display="block";
+    document.getElementById("error").innerText = "Clave incorrecta";
   }
 }
 
-function exportar(){
-  const texto = `
-PROBLEMA:
-${problema.value}
+function showApp(){
+  document.getElementById("lock").classList.add("hidden");
+  document.getElementById("app").classList.remove("hidden");
+}
 
-QUE PASA:
-${actual.value}
-
-QUE DEBERIA PASAR:
-${ideal.value}
-
-QUE DEPENDE DE MI:
-${control.value}
-
-PROXIMA ACCION:
-${accion.value}
-  `;
-  navigator.clipboard.writeText(texto);
-  alert("Contenido copiado. Pégalo en la plantilla o donde lo necesites.");
+if(localStorage.getItem("praxis_access")==="true"){
+  showApp();
 }
 </script>
 
 </body>
 </html>
+
+
