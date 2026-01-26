@@ -21,10 +21,10 @@ body{
   color:#222;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (CORREGIDO) ===== */
 header{
-  background:#fff;
-  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  box-shadow:0 6px 30px rgba(0,0,0,.18);
   position:sticky;
   top:0;
   z-index:100;
@@ -35,22 +35,27 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px;
+  padding:15px 20px;
 }
 .nav img{
-  height:45px;
+  height:46px;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));
 }
 .nav ul{
   list-style:none;
   display:flex;
-  gap:20px;
+  gap:22px;
 }
 .nav a{
   text-decoration:none;
-  color:#333;
+  color:#fff;
   font-weight:600;
+  opacity:.95;
 }
-.nav a:hover{color:var(--secondary)}
+.nav a:hover{
+  opacity:1;
+  color:var(--accent);
+}
 
 /* ===== HERO ===== */
 .hero{
@@ -79,15 +84,15 @@ header{
 .btn{
   display:inline-block;
   margin-top:25px;
-  padding:15px 30px;
+  padding:15px 32px;
   background:linear-gradient(135deg,var(--secondary),var(--primary));
   color:#fff;
   border-radius:40px;
   text-decoration:none;
   font-weight:700;
-  transition:.3s;
+  transition:.35s;
 }
-.btn:hover{transform:scale(1.05)}
+.btn:hover{transform:scale(1.06)}
 
 /* ===== QUE OBTIENES ===== */
 .section{
@@ -112,9 +117,7 @@ header{
   box-shadow:0 20px 40px rgba(0,0,0,.08);
   transition:.4s;
 }
-.card:hover{
-  transform:translateY(-8px);
-}
+.card:hover{transform:translateY(-8px)}
 .card h3{
   margin-bottom:15px;
   color:var(--primary);
@@ -168,36 +171,24 @@ header{
   box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-/* ===== MINI APP ===== */
+/* ===== MINI APP (LINK A MOTOR CLARIDAD) ===== */
 .miniapp{
-  background:linear-gradient(180deg,#fff,#f0f4f8);
-  border-radius:25px;
-  padding:40px;
-  box-shadow:0 25px 60px rgba(0,0,0,.12);
+  background:linear-gradient(180deg,#ffffff,#eef3f8);
+  border-radius:26px;
+  padding:45px;
+  box-shadow:0 30px 70px rgba(0,0,0,.14);
+  text-align:center;
 }
 .miniapp h3{
-  font-size:26px;
-  margin-bottom:20px;
+  font-size:28px;
+  margin-bottom:15px;
   color:var(--primary);
 }
-.miniapp label{
-  font-weight:600;
-  display:block;
-  margin-top:20px;
-}
-.miniapp input, .miniapp textarea{
-  width:100%;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid #ccc;
-  margin-top:8px;
-}
-.result{
-  background:#fff;
-  padding:25px;
-  border-radius:15px;
-  margin-top:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+.miniapp p{
+  font-size:17px;
+  max-width:720px;
+  margin:0 auto 25px;
+  line-height:1.6;
 }
 
 /* ===== FOOTER ===== */
@@ -220,7 +211,7 @@ footer{
 
 <header>
   <div class="nav">
-    <img src="logo-sistema-praxis.png" alt="Logo">
+    <img src="logo.png" alt="Logo Método PRAXIS">
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="elsistema.html">El Sistema</a></li>
@@ -234,7 +225,7 @@ footer{
   <div>
     <h1>Método PRAXIS</h1>
     <p>Claridad estratégica, toma de decisiones y ejecución real.  
-    No es solo un ebook: es un **sistema práctico con herramientas aplicables**.</p>
+    No es solo un ebook: es un <strong>sistema práctico con herramientas aplicables</strong>.</p>
     <div class="price">$10 USD</div>
     <a class="btn" href="#acceso">Comprar ahora</a>
   </div>
@@ -253,8 +244,8 @@ footer{
       <p>Modelo editable para organizar decisiones, prioridades y acciones.</p>
     </div>
     <div class="card">
-      <h3>⚙ Mini-App Interactiva</h3>
-      <p>Convierte reflexión en resultados medibles y guardables.</p>
+      <h3>⚙ Motor de Claridad</h3>
+      <p>Aplicación interactiva avanzada para análisis estratégico.</p>
     </div>
   </div>
 </section>
@@ -282,23 +273,14 @@ footer{
   </div>
 
   <div class="miniapp">
-    <h3>Mini-App PRAXIS</h3>
-
-    <label>Situación actual</label>
-    <textarea id="s1"></textarea>
-
-    <label>Objetivo deseado</label>
-    <textarea id="s2"></textarea>
-
-    <label>Bloqueo principal</label>
-    <textarea id="s3"></textarea>
-
-    <label>Acción inmediata</label>
-    <textarea id="s4"></textarea>
-
-    <button class="btn" onclick="generar()">Generar análisis</button>
-
-    <div class="result" id="resultado"></div>
+    <h3>Motor de Claridad PRAXIS</h3>
+    <p>
+      Accede a la aplicación avanzada donde podrás analizar tu situación,
+      generar diagnósticos estratégicos, guardar resultados e imprimirlos.
+    </p>
+    <a class="btn" href="motor-claridad.html" target="_blank">
+      Acceder al Motor de Claridad
+    </a>
   </div>
 </section>
 
@@ -318,21 +300,11 @@ function unlock(){
     alert("Código incorrecto");
   }
 }
-
-function generar(){
-  const r = `
-  <strong>Diagnóstico:</strong><br>
-  Situación: ${s1.value}<br><br>
-  Objetivo: ${s2.value}<br><br>
-  Bloqueo: ${s3.value}<br><br>
-  Acción recomendada: ${s4.value}
-  `;
-  resultado.innerHTML = r;
-}
 </script>
 
 </body>
 </html>
+
 
 
 
