@@ -11,7 +11,9 @@
 :root{
   --azul:#0d3b66;
   --azul2:#1f6fae;
+  --acento:#2563eb;
   --claro:#eaf3fb;
+  --fondo:#f1f5f9;
   --oscuro:#020617;
   --texto:#2e2e2e;
 }
@@ -20,7 +22,7 @@
 
 body{
   font-family:Inter,system-ui;
-  background:#fff;
+  background:linear-gradient(180deg,#ffffff,#f1f5f9);
   color:var(--texto);
   line-height:1.6;
 }
@@ -56,12 +58,13 @@ nav a:hover{opacity:1;text-decoration:underline}
 
 /* HERO */
 .hero{
-  background:var(--claro);
-  padding:90px 24px;
+  padding:100px 24px 80px;
   text-align:center;
+  background:
+    radial-gradient(circle at top,#eaf3fb 0%,#ffffff 60%);
 }
 .hero h1{
-  font-size:42px;
+  font-size:44px;
   color:var(--azul);
   margin-bottom:18px;
 }
@@ -71,64 +74,99 @@ nav a:hover{opacity:1;text-decoration:underline}
   font-size:18px;
 }
 
-/* SECCIONES */
+/* CONTENEDOR */
 .section{
   max-width:1100px;
   margin:auto;
-  padding:80px 24px;
-}
-.section h2{
-  font-size:30px;
-  color:var(--azul);
-  margin-bottom:16px;
+  padding:90px 24px;
 }
 
-/* BLOQUE VENTA */
+/* TARJETA DE VENTA */
 .sale{
-  background:#f8fafc;
-  border-radius:18px;
-  padding:48px;
-  box-shadow:0 20px 50px rgba(0,0,0,.08);
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  border-radius:22px;
+  padding:56px;
+  box-shadow:0 30px 70px rgba(0,0,0,.12);
+  position:relative;
+}
+.sale::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  border:1px solid rgba(37,99,235,.15);
+  pointer-events:none;
+}
+
+.sale h2{
+  font-size:32px;
+  color:var(--azul);
+  margin-bottom:20px;
+}
+
+.sale ul{
+  list-style:none;
+  margin-bottom:32px;
+}
+.sale li{
+  font-size:17px;
+  margin-bottom:12px;
+}
+
+/* PRECIO */
+.price-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:36px;
+  flex-wrap:wrap;
 }
 .price{
-  font-size:38px;
+  font-size:46px;
   font-weight:700;
-  color:var(--azul2);
-  margin:24px 0;
+  color:var(--acento);
 }
+.price span{
+  font-size:18px;
+  font-weight:500;
+  color:#475569;
+}
+
 .buy-btn{
-  display:inline-block;
-  background:var(--azul2);
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
   color:#fff;
-  padding:16px 32px;
-  border-radius:12px;
+  padding:18px 36px;
+  border-radius:14px;
   font-weight:600;
   text-decoration:none;
+  box-shadow:0 15px 40px rgba(37,99,235,.35);
 }
 
 /* ACCESO */
 .access{
-  margin-top:60px;
-  padding:48px;
-  border-radius:18px;
-  background:#020617;
+  margin-top:70px;
+  padding:56px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#020617,#020617 60%,#020617);
   color:#e5e7eb;
+  box-shadow:0 30px 70px rgba(0,0,0,.35);
 }
+.access h2{font-size:26px;margin-bottom:8px}
 .access input{
   width:100%;
-  padding:14px;
-  border-radius:10px;
+  padding:16px;
+  border-radius:12px;
   border:none;
-  margin:16px 0;
+  margin:18px 0;
   font-size:16px;
 }
 .access button{
   width:100%;
-  padding:14px;
-  background:#2563eb;
+  padding:16px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
   border:none;
   color:#fff;
-  border-radius:10px;
+  border-radius:12px;
   font-weight:600;
   cursor:pointer;
 }
@@ -136,28 +174,30 @@ nav a:hover{opacity:1;text-decoration:underline}
 /* CONTENIDO PRIVADO */
 .private{
   display:none;
-  margin-top:60px;
-  background:#f8fafc;
-  padding:48px;
-  border-radius:18px;
+  margin-top:70px;
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  padding:56px;
+  border-radius:22px;
+  box-shadow:0 30px 70px rgba(0,0,0,.12);
 }
 .tools{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:32px;
-  margin-top:32px;
+  margin-top:36px;
 }
 .tool{
   background:#fff;
-  padding:28px;
-  border-radius:14px;
+  padding:32px;
+  border-radius:16px;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
+.tool h3{margin-bottom:10px}
 .tool a{
   display:inline-block;
-  margin-top:12px;
+  margin-top:14px;
   font-weight:600;
-  color:var(--azul2);
+  color:var(--acento);
   text-decoration:none;
 }
 
@@ -174,6 +214,7 @@ footer{
 @media(max-width:900px){
   nav{display:none}
   .hero h1{font-size:34px}
+  .price-box{flex-direction:column;gap:24px}
 }
 </style>
 </head>
@@ -199,30 +240,32 @@ footer{
   <h1>Ebook 1 · Claridad</h1>
   <p>
     El punto de entrada al Sistema Praxis.
-    Reduce el ruido mental y decide con precisión qué merece tu energía hoy.
+    Diseñado para reducir ruido mental y decidir con precisión qué merece tu energía.
   </p>
 </section>
 
 <section class="section">
+
   <div class="sale">
-    <h2>Qué incluye</h2>
+    <h2>Qué incluye el paquete</h2>
     <ul>
-      <li>📘 Ebook Praxis · Claridad</li>
+      <li>📘 Ebook Praxis · Claridad (PDF)</li>
       <li>📊 Plantilla Excel Praxis</li>
-      <li>🧠 Mini App de Claridad Interactiva</li>
+      <li>🧠 Mini App interactiva de claridad</li>
       <li>🔐 Acceso privado por código</li>
     </ul>
 
-    <div class="price">$49.000 COP</div>
-
-    <a class="buy-btn" href="#">Comprar ahora</a>
+    <div class="price-box">
+      <div class="price">$10 <span>USD · Pago único</span></div>
+      <a class="buy-btn" href="#">Comprar ahora</a>
+    </div>
   </div>
 
   <div class="access">
     <h2>¿Ya compraste?</h2>
     <p>Ingresa tu código para desbloquear el contenido</p>
 
-    <input id="codeInput" placeholder="Ej: PRAXIS-CLARIDAD-2026-A9F3">
+    <input id="codeInput" placeholder="Ej: PRAXIS-UNIVERSAL">
     <button onclick="unlock()">Desbloquear acceso</button>
   </div>
 
@@ -246,6 +289,7 @@ footer{
       </div>
     </div>
   </div>
+
 </section>
 
 <footer>
@@ -253,9 +297,7 @@ footer{
 </footer>
 
 <script>
-const validCodes=[
-  "PRAXIS-UNIVERSAL"
-];
+const validCodes=["PRAXIS-UNIVERSAL"];
 
 function unlock(){
   const input=document.getElementById("codeInput").value.trim();
@@ -270,6 +312,8 @@ function unlock(){
 
 </body>
 </html>
+
+
 
 
 
