@@ -1,246 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ebook 1 | Sistema Praxis</title>
+  <meta charset="UTF-8">
+  <title>Ebook 1 · Sistema Praxis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-  --primary:#0b3c5d;
-  --secondary:#328cc1;
-  --accent:#f4d35e;
-  --dark:#1f2933;
-  --light:#f8f9fa;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
 
-body{
-  margin:0;
-  font-family:'Segoe UI', Tahoma, sans-serif;
-  background:var(--light);
-  color:#333;
-  line-height:1.6;
-}
+    a {
+      text-decoration: none;
+    }
 
-a{text-decoration:none;}
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-}
+    header .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #f8fafc;
+    }
 
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(135deg,var(--primary),var(--dark));
-  color:#fff;
-  padding:100px 20px;
-  text-align:center;
-}
+    header nav a {
+      margin-left: 1.5rem;
+      color: #cbd5f5;
+      font-size: 0.9rem;
+    }
 
-.hero h1{
-  font-size:42px;
-  margin-bottom:20px;
-}
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
 
-.hero p{
-  font-size:18px;
-  max-width:720px;
-  margin:0 auto 40px;
-  opacity:.9;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
 
-.cta{
-  display:inline-block;
-  padding:16px 32px;
-  background:var(--accent);
-  color:#000;
-  font-weight:600;
-  border-radius:12px;
-  font-size:18px;
-}
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #f8fafc;
+    }
 
-.cta:hover{opacity:.9;}
+    .hero p {
+      font-size: 1.1rem;
+      color: #cbd5f5;
+      margin-bottom: 2rem;
+    }
 
-/* ===== SECCIONES ===== */
-.section{
-  background:#fff;
-  margin-top:40px;
-  border-radius:18px;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
+    .hero img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    }
 
-.section h2{
-  color:var(--primary);
-  margin-bottom:20px;
-}
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
+    /* TOOL SECTION */
+    .tool-section {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      padding: 5rem 2rem;
+      margin-top: 6rem;
+      border-radius: 24px;
+    }
 
-.card{
-  background:#fdfdfd;
-  padding:30px;
-  border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+    .tool-container {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
 
-.card h3{
-  margin-top:0;
-  color:var(--secondary);
-}
+    .tool-badge {
+      display: inline-block;
+      background: rgba(56,189,248,0.15);
+      color: #38bdf8;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
 
-/* ===== TOOL ===== */
-.tool{
-  background:linear-gradient(135deg,#eef6fb,#ffffff);
-  border:2px solid var(--secondary);
-}
+    .tool-container h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
 
-.tool a{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 24px;
-  background:var(--secondary);
-  color:#fff;
-  border-radius:10px;
-}
+    .tool-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
 
-/* ===== BONUS ===== */
-.bonus{
-  background:#fff8e1;
-  border-left:8px solid var(--accent);
-}
+    .tool-list li {
+      margin-bottom: 0.6rem;
+    }
 
-/* ===== FOOTER ===== */
-footer{
-  margin-top:80px;
-  text-align:center;
-  font-size:14px;
-  color:#777;
-}
-</style>
+    .locked {
+      background: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 16px;
+    }
+
+    .locked input {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    .locked button {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background: #38bdf8;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .download {
+      display: none;
+      margin-top: 2rem;
+    }
+
+    .download a {
+      display: inline-block;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #020617;
+      padding: 0.9rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 6rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Ebook 1 · Sistema Praxis</h1>
-  <p>
-    No es solo un ebook.  
-    Es un <strong>sistema práctico</strong> para pensar mejor, decidir con claridad  
-    y ejecutar acciones reales en tu vida o proyectos.
-  </p>
-  <a href="#comprar" class="cta">Acceder al sistema</a>
-</section>
+<header>
+  <div class="logo">PRAXIS</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="el-sistema.html">El Sistema</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
 
-<!-- PROBLEMA -->
-<div class="container section">
-  <h2>¿Por qué este ebook es diferente?</h2>
-  <p>
-    La mayoría de ebooks se quedan en teoría.  
-    El Sistema Praxis fue diseñado para que <strong>pienses, escribas y actúes</strong>.
-  </p>
+<main>
 
-  <div class="grid">
-    <div class="card">
-      <h3>❌ Más información no es claridad</h3>
-      <p>El exceso de contenido bloquea la toma de decisiones.</p>
-    </div>
-    <div class="card">
-      <h3>❌ Pensar sin estructura no avanza</h3>
-      <p>Sin método, todo se queda en ideas sueltas.</p>
-    </div>
-    <div class="card">
-      <h3>❌ Leer sin aplicar no transforma</h3>
-      <p>Este sistema exige acción.</p>
-    </div>
-  </div>
-</div>
-
-<!-- SOLUCIÓN -->
-<div class="container section">
-  <h2>La solución: Sistema Praxis</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>📘 Ebook guiado</h3>
+  <section class="hero">
+    <div>
+      <h1>Ebook 1: Claridad antes que disciplina</h1>
       <p>
-        Contenido claro, corto y accionable.  
-        Diseñado para ser trabajado, no solo leído.
+        No necesitas motivación infinita.
+        Necesitas un sistema que piense contigo cuando tú estás cansado.
       </p>
+      <a href="#herramienta" class="cta">Ver herramienta incluida</a>
     </div>
 
-    <div class="card tool">
-      <h3>🧠 Mini-App Matriz Praxis</h3>
-      <p>
-        Herramienta interactiva exclusiva para compradores.  
-        Te ayuda a convertir cualquier problema en una acción concreta.
-      </p>
-      <a href="matriz-praxis.html">Acceder a la herramienta</a>
+    <img src="ebook1.png" alt="Ebook Sistema Praxis">
+  </section>
+
+  <section id="herramienta" class="tool-section">
+    <div class="tool-container">
+
+      <div>
+        <span class="tool-badge">HERRAMIENTA INCLUIDA</span>
+        <h2>Matriz Praxis</h2>
+
+        <ul class="tool-list">
+          <li>✔ Reduce ruido mental</li>
+          <li>✔ Ordena prioridades</li>
+          <li>✔ Convierte ideas en acciones</li>
+          <li>✔ Apta para trabajo y vida personal</li>
+        </ul>
+
+        <div class="locked" id="lockBox">
+          <p><strong>Acceso exclusivo para compradores</strong></p>
+          <input type="text" id="accessKey" placeholder="Ingresa tu clave de acceso">
+          <button onclick="unlock()">Desbloquear herramienta</button>
+        </div>
+
+        <div class="download" id="downloadBox">
+          <p>Acceso concedido ✔</p>
+          <a href="plantilla-praxis.xlsx" download>
+            Descargar Matriz Praxis
+          </a>
+        </div>
+      </div>
+
+      <img src="ebook1.png" alt="Matriz Praxis visual">
     </div>
+  </section>
 
-    <div class="card">
-      <h3>📊 Plantilla descargable</h3>
-      <p>
-        Para llevar tus decisiones a Excel, Notion o papel.  
-        Compatible con la mini-app.
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- QUÉ APRENDES -->
-<div class="container section">
-  <h2>Qué lograrás con este sistema</h2>
-  <ul>
-    <li>✔ Claridad mental inmediata</li>
-    <li>✔ Decisiones estructuradas</li>
-    <li>✔ Enfoque en lo que sí depende de ti</li>
-    <li>✔ Acción concreta en menos de 30 minutos</li>
-  </ul>
-</div>
-
-<!-- BONUS -->
-<div class="container section bonus">
-  <h2>🎁 Bonus exclusivo</h2>
-  <p>
-    Acceso a la <strong>Matriz Praxis</strong>,  
-    una herramienta digital que no se vende por separado.
-  </p>
-</div>
-
-<!-- CTA FINAL -->
-<div id="comprar" class="container section" style="text-align:center;">
-  <h2>Accede ahora al Sistema Praxis</h2>
-  <p>
-    Ebook + herramienta + plantilla.  
-    Un solo sistema para pensar mejor y actuar con claridad.
-  </p>
-  <a href="https://TU-LINK-DE-PAGO-AQUI" class="cta" target="_blank">
-Comprar ahora
-</a>
-
-<p style="margin-top:20px;font-size:14px;color:#666;">
-Después de la compra recibirás tu clave de acceso.
-</p>
-  <p style="font-size:14px;color:#666;margin-top:10px;">
-    Acceso inmediato · Uso personal
-  </p>
-</div>
+</main>
 
 <footer>
-  © 2026 Sistema Praxis · Todos los derechos reservados
+  <section class="final-quote">
+    “No necesitas más disciplina. Necesitas un sistema que piense contigo.”
+  </section>
+  <p>© 2026 Sistema Praxis · Claridad que genera avance</p>
 </footer>
+
+<script>
+  const VALID_KEY = "PRAXIS-2026";
+
+  function unlock() {
+    const input = document.getElementById("accessKey").value;
+
+    if (input === VALID_KEY) {
+      localStorage.setItem("praxis_access", "true");
+      showDownload();
+    } else {
+      alert("Clave incorrecta");
+    }
+  }
+
+  function showDownload() {
+    document.getElementById("lockBox").style.display = "none";
+    document.getElementById("downloadBox").style.display = "block";
+  }
+
+  if (localStorage.getItem("praxis_access") === "true") {
+    showDownload();
+  }
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
