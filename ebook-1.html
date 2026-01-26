@@ -13,7 +13,6 @@
   --azul2:#1f6fae;
   --acento:#2563eb;
   --claro:#eaf3fb;
-  --fondo:#f1f5f9;
   --oscuro:#020617;
   --texto:#2e2e2e;
 }
@@ -25,6 +24,17 @@ body{
   background:linear-gradient(180deg,#ffffff,#f1f5f9);
   color:var(--texto);
   line-height:1.6;
+}
+
+/* ================== ANIMACIONES BASE ================== */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+@keyframes softGlow{
+  from{box-shadow:0 0 0 rgba(37,99,235,0)}
+  to{box-shadow:0 20px 60px rgba(37,99,235,.35)}
 }
 
 /* HEADER */
@@ -60,8 +70,8 @@ nav a:hover{opacity:1;text-decoration:underline}
 .hero{
   padding:100px 24px 80px;
   text-align:center;
-  background:
-    radial-gradient(circle at top,#eaf3fb 0%,#ffffff 60%);
+  background:radial-gradient(circle at top,#eaf3fb 0%,#ffffff 60%);
+  animation:fadeUp .9s ease forwards;
 }
 .hero h1{
   font-size:44px;
@@ -87,15 +97,12 @@ nav a:hover{opacity:1;text-decoration:underline}
   border-radius:22px;
   padding:56px;
   box-shadow:0 30px 70px rgba(0,0,0,.12);
-  position:relative;
+  animation:fadeUp 1s ease forwards;
+  transition:transform .4s ease, box-shadow .4s ease;
 }
-.sale::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:22px;
-  border:1px solid rgba(37,99,235,.15);
-  pointer-events:none;
+.sale:hover{
+  transform:translateY(-6px);
+  box-shadow:0 40px 90px rgba(0,0,0,.18);
 }
 
 .sale h2{
@@ -140,6 +147,11 @@ nav a:hover{opacity:1;text-decoration:underline}
   font-weight:600;
   text-decoration:none;
   box-shadow:0 15px 40px rgba(37,99,235,.35);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.buy-btn:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 25px 60px rgba(37,99,235,.45);
 }
 
 /* ACCESO */
@@ -147,9 +159,9 @@ nav a:hover{opacity:1;text-decoration:underline}
   margin-top:70px;
   padding:56px;
   border-radius:22px;
-  background:linear-gradient(135deg,#020617,#020617 60%,#020617);
+  background:linear-gradient(135deg,#020617,#020617);
   color:#e5e7eb;
-  box-shadow:0 30px 70px rgba(0,0,0,.35);
+  animation:fadeUp 1.1s ease forwards;
 }
 .access h2{font-size:26px;margin-bottom:8px}
 .access input{
@@ -169,7 +181,9 @@ nav a:hover{opacity:1;text-decoration:underline}
   border-radius:12px;
   font-weight:600;
   cursor:pointer;
+  transition:transform .3s ease;
 }
+.access button:hover{transform:scale(1.02)}
 
 /* CONTENIDO PRIVADO */
 .private{
@@ -179,7 +193,9 @@ nav a:hover{opacity:1;text-decoration:underline}
   padding:56px;
   border-radius:22px;
   box-shadow:0 30px 70px rgba(0,0,0,.12);
+  animation:fadeUp .9s ease forwards;
 }
+
 .tools{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -191,6 +207,11 @@ nav a:hover{opacity:1;text-decoration:underline}
   padding:32px;
   border-radius:16px;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.tool:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
 }
 .tool h3{margin-bottom:10px}
 .tool a{
@@ -224,7 +245,7 @@ footer{
 <header>
   <div class="header-content">
     <div class="logo">
-      <img src="logo-sistema-praxis.png" alt="Sistema Praxis">
+      <img src="logo-sistema-praxis.png">
       <span>SISTEMA PRAXIS</span>
     </div>
     <nav>
@@ -238,54 +259,46 @@ footer{
 
 <section class="hero">
   <h1>Ebook 1 · Claridad</h1>
-  <p>
-    El punto de entrada al Sistema Praxis.
-    Diseñado para reducir ruido mental y decidir con precisión qué merece tu energía.
-  </p>
+  <p>Reduce el ruido mental y decide con precisión qué merece tu energía.</p>
 </section>
 
 <section class="section">
 
   <div class="sale">
-    <h2>Qué incluye el paquete</h2>
+    <h2>Incluye</h2>
     <ul>
-      <li>📘 Ebook Praxis · Claridad (PDF)</li>
-      <li>📊 Plantilla Excel Praxis</li>
-      <li>🧠 Mini App interactiva de claridad</li>
-      <li>🔐 Acceso privado por código</li>
+      <li>📘 Ebook Praxis · Claridad</li>
+      <li>📊 Plantilla Excel</li>
+      <li>🧠 Mini App interactiva</li>
+      <li>🔐 Acceso privado</li>
     </ul>
 
     <div class="price-box">
-      <div class="price">$10 <span>USD · Pago único</span></div>
+      <div class="price">$10 <span>USD</span></div>
       <a class="buy-btn" href="#">Comprar ahora</a>
     </div>
   </div>
 
   <div class="access">
     <h2>¿Ya compraste?</h2>
-    <p>Ingresa tu código para desbloquear el contenido</p>
-
-    <input id="codeInput" placeholder="Ej: PRAXIS-UNIVERSAL">
+    <input id="codeInput" placeholder="PRAXIS-UNIVERSAL">
     <button onclick="unlock()">Desbloquear acceso</button>
   </div>
 
   <div class="private" id="private">
     <h2>Contenido desbloqueado</h2>
-
     <div class="tools">
       <div class="tool">
         <h3>📘 Ebook</h3>
-        <a href="ebook-claridad.pdf" download>Descargar ebook</a>
+        <a href="ebook-claridad.pdf" download>Descargar</a>
       </div>
-
       <div class="tool">
-        <h3>📊 Plantilla Excel</h3>
-        <a href="plantilla-praxis.xlsx" download>Descargar Excel</a>
+        <h3>📊 Excel</h3>
+        <a href="plantilla-praxis.xlsx" download>Descargar</a>
       </div>
-
       <div class="tool">
-        <h3>🧠 Mini App Praxis</h3>
-        <a href="miniapp-claridad.html">Abrir aplicación</a>
+        <h3>🧠 Mini App</h3>
+        <a href="miniapp-claridad.html">Abrir</a>
       </div>
     </div>
   </div>
@@ -297,13 +310,9 @@ footer{
 </footer>
 
 <script>
-const validCodes=["PRAXIS-UNIVERSAL"];
-
 function unlock(){
-  const input=document.getElementById("codeInput").value.trim();
-  if(validCodes.includes(input)){
+  if(document.getElementById("codeInput").value==="PRAXIS-UNIVERSAL"){
     document.getElementById("private").style.display="block";
-    alert("Acceso concedido");
   }else{
     alert("Código inválido");
   }
@@ -312,6 +321,8 @@ function unlock(){
 
 </body>
 </html>
+
+
 
 
 
