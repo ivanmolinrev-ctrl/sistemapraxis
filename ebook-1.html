@@ -37,9 +37,21 @@ header{
   align-items:center;
   padding:15px 20px;
 }
-.nav img{
-  height:46px;
-  filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo img {
+  height: 84px;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: white;
 }
 .nav ul{
   list-style:none;
@@ -211,8 +223,11 @@ footer{
 
 <header>
   <div class="nav">
-    <img src="logo-sistema-praxis.png" alt="Logo Método PRAXIS">
-    <ul>
+  <div class="logo">
+    <img src="logo.png" alt="Logo Método PRAXIS">
+    <span>Método PRAXIS</span>
+  </div>
+  <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="elsistema.html">El Sistema</a></li>
       <li><a href="#beneficios">Beneficios</a></li>
@@ -304,6 +319,7 @@ function unlock(){
 
 </body>
 </html>
+
 
 
 
